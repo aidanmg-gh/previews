@@ -219,7 +219,7 @@ form.done .thanks{display:block}
 .phead p{max-width:720px;color:#e8e8f5}
 .prose{padding:56px 0}
 .prose .split{align-items:start}
-.prose h2{margin-top:1.2em}
+.prose h2{margin-top:1.2em;font-size:clamp(1.3rem,2.6vw,1.65rem)}
 .prose h2:first-child{margin-top:0}
 .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 1em}
 .steps li{counter-increment:s;padding:0 0 14px 50px;position:relative}
