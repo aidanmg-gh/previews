@@ -281,3 +281,5 @@ form.rq{padding:18px 26px 28px;display:grid;gap:12px}
   .prose{gap:30px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.lic-line a{white-space:nowrap}
+.doc .crumbs a{color:var(--blue)}

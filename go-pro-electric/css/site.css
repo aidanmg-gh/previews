@@ -269,6 +269,7 @@ form.done .sent { display: block; }
   .sec-sub { margin-bottom: 34px; }
   .circles { grid-template-columns: 1fr 1fr; gap: 32px 16px; }
   .circles img { width: 150px; height: 150px; margin-bottom: 12px; }
+  .circles li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .circles h3 { font-size: 14px; }
   .circles p { font-size: 13px; }
   .also { font-size: 13px; margin-top: 36px; }
