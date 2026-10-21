@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; base-uri 'none'">
+<meta name="robots" content="noindex">
+<meta name="description" content="Demo website by Straightedge Web for a made-up contractor. Not a real company.">
+<link rel="icon" href="data:,">
+<link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-800.webp 800w, img/hero.webp 1600w" imagesizes="(max-width: 640px) 100vw, 100vw" fetchpriority="high">
+<title>Ridgeback Roofing | Demo site by Straightedge Web</title>
+<style>
+@font-face { font-family: "Archivo"; font-weight: 400 900; font-stretch: 62% 125%; font-display: swap; src: url(../../fonts/archivo-latin.woff2) format("woff2"); }
+:root { --slate: #1f2a33; --slate2: #2b3844; --copper: #b4561a; --copper2: #d27a3b; --paper: #f5f1e9; --white: #fff; --ink: #1c242c; --mute: #5f6a74; --line: #dcd5c6; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.65 "Archivo", Arial, sans-serif; -webkit-text-size-adjust: 100%; }
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 1220px; margin: 0 auto; padding: 0 28px; }
+.demo { background: #000; color: #fff; font-size: 13px; text-align: center; padding: 7px 12px; }
+.demo a { color: #f0b48a; }
+.util { background: var(--slate); color: #c3ccd5; font-size: 14px; }
+.util .wrap { display: flex; justify-content: space-between; gap: 6px 24px; flex-wrap: wrap; padding-top: 9px; padding-bottom: 9px; }
+.util b { color: #fff; font-weight: 600; }
+header { position: sticky; top: 0; z-index: 20; background: var(--white); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 82px; }
+.logo { font-weight: 850; font-stretch: 90%; font-size: 24px; letter-spacing: .07em; text-transform: uppercase; text-decoration: none; display: flex; align-items: center; gap: 12px; color: var(--slate); }
+.logo svg { width: 38px; height: 38px; }
+nav.m { display: flex; gap: 30px; }
+nav.m a { text-decoration: none; font-weight: 600; font-size: 15px; color: #3b4651; }
+nav.m a:hover { color: var(--copper); }
+.call { background: var(--copper); color: #fff; font-weight: 800; text-decoration: none; padding: 13px 22px; white-space: nowrap; }
+.call:hover { background: #99470f; }
+.hero { position: relative; background: var(--slate); color: #fff; overflow: hidden; }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(20,28,35,.7); }
+.hero .wrap { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; padding-top: 84px; padding-bottom: 84px; }
+.kick { font-size: 13px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: #f0b48a; margin: 0 0 16px; }
+h1 { font-weight: 800; font-stretch: 86%; font-size: clamp(40px, 5.8vw, 76px); line-height: 1; letter-spacing: -.025em; margin: 0 0 22px; color: #fff; }
+.lede { font-size: 21px; color: #dbe2e8; max-width: 28em; margin: 0 0 28px; }
+.hero .rate { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin-top: 26px; color: #c9d2da; font-size: 15px; }
+.hero .rate .s { color: #f0b48a; letter-spacing: 2px; font-size: 18px; }
+.quote { background: var(--paper); color: var(--ink); padding: 32px 30px 30px; border-top: 5px solid var(--copper); }
+.quote h2 { font-weight: 800; font-stretch: 88%; font-size: 30px; line-height: 1.05; margin: 0 0 8px; color: var(--slate); letter-spacing: -.01em; }
+.quote p { margin: 0 0 20px; color: var(--mute); font-size: 16px; }
+.quote .b1 { display: block; text-align: center; background: var(--copper); color: #fff; font-weight: 800; font-size: 22px; padding: 16px; text-decoration: none; margin-bottom: 10px; }
+.quote .b1:hover { background: #99470f; }
+.quote .b2 { display: block; text-align: center; border: 2px solid var(--slate); color: var(--slate); font-weight: 700; padding: 13px; text-decoration: none; }
+.quote .b2:hover { background: var(--slate); color: #fff; }
+.quote small { display: block; margin-top: 14px; color: var(--mute); font-size: 13px; text-align: center; }
+.sample { position: absolute; right: 14px; bottom: 12px; z-index: 3; font-size: 11px; color: #fff; background: rgba(0,0,0,.6); padding: 3px 8px; letter-spacing: .6px; }
+.trust { background: var(--white); border-bottom: 1px solid var(--line); }
+.trust .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.trust div { padding: 26px 24px; }
+.trust div + div { border-left: 1px solid var(--line); }
+.trust svg { width: 38px; height: 38px; }
+.trust b { display: block; font-weight: 800; font-size: 18px; color: var(--slate); line-height: 1.2; margin-bottom: 2px; }
+.trust span { font-size: 14.5px; color: var(--mute); line-height: 1.4; display: block; }
+section.s { padding: 88px 0; }
+.head { max-width: 42em; margin-bottom: 42px; }
+h2.t { font-weight: 800; font-stretch: 88%; font-size: clamp(32px, 4.4vw, 54px); line-height: 1.03; letter-spacing: -.02em; margin: 0 0 14px; color: var(--slate); }
+.head p { color: var(--mute); font-size: 19px; margin: 0; }
+.mats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.mat { background: var(--white); border: 1px solid var(--line); }
+.mat .ph { position: relative; }
+.mat img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.mat .tx { padding: 22px 24px 26px; }
+.mat h3 { margin: 0 0 6px; font-weight: 800; font-stretch: 90%; font-size: 24px; color: var(--slate); }
+.mat p { margin: 0; color: var(--mute); font-size: 16px; }
+.warr { background: var(--slate); color: #fff; }
+.warr .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: center; }
+.warr h2.t { color: #fff; }
+.warr p { color: #c3ccd5; font-size: 19px; }
+.warr ul { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid #3a4856; }
+.warr li { padding: 13px 0; border-bottom: 1px solid #3a4856; color: #e3e9ee; }
+.warr li b { color: #f0b48a; font-weight: 700; margin-right: 8px; }
+.crest { justify-self: center; width: min(320px, 70%); }
+.gal { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 14px; }
+.gal figure { position: relative; margin: 0; overflow: hidden; }
+.gal img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
+.gal figcaption { position: absolute; left: 0; bottom: 0; background: rgba(20,28,35,.82); color: #fff; font-size: 14px; padding: 8px 14px; }
+.rev { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.score { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 30px; }
+.score .n { font-weight: 850; font-stretch: 80%; font-size: 84px; line-height: 1; color: var(--slate); letter-spacing: -.03em; }
+.score .st { color: var(--copper); letter-spacing: 3px; font-size: 24px; }
+.score .t2 { color: var(--mute); }
+.wall { columns: 3; column-gap: 24px; }
+.wall figure { margin: 0 0 24px; break-inside: avoid; background: var(--paper); border: 1px solid var(--line); padding: 24px 24px 20px; }
+.wall .st { color: var(--copper); letter-spacing: 3px; font-size: 17px; }
+.wall blockquote { margin: 10px 0 12px; font-size: 18px; line-height: 1.45; }
+.wall figcaption { color: var(--mute); font-size: 14px; }
+.fin { background: var(--copper); color: #fff; }
+.fin .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 40px; padding-top: 38px; padding-bottom: 38px; }
+.fin b { font-weight: 800; font-stretch: 90%; font-size: 26px; display: block; }
+.fin span { color: #fff; }
+.fin a { background: #fff; color: var(--copper); font-weight: 800; padding: 14px 28px; text-decoration: none; }
+.two { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: start; }
+details { border-bottom: 1px solid var(--line); }
+details:first-of-type { border-top: 3px solid var(--copper); }
+summary { cursor: pointer; padding: 19px 40px 19px 0; font-weight: 800; font-size: 20px; position: relative; list-style: none; color: var(--slate); }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 4px; top: 13px; font-size: 30px; font-weight: 400; color: var(--copper); }
+details[open] summary::after { content: "\2212"; }
+details p { margin: 0 0 18px; color: #3b4651; max-width: 38em; }
+.end { background: var(--slate); color: #fff; padding: 84px 0; }
+.end h2.t { color: #fff; }
+.end .n { display: block; font-weight: 850; font-stretch: 80%; font-size: clamp(46px, 9.5vw, 128px); line-height: .95; letter-spacing: -.03em; text-decoration: none; color: #fff; white-space: nowrap; margin: 20px 0 10px; }
+.end p { color: #c3ccd5; margin: 0; font-size: 19px; }
+footer { background: #151c22; color: #8b97a3; font-size: 15px; padding: 48px 0 28px; }
+footer .g { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 36px; padding-bottom: 30px; border-bottom: 1px solid #28333d; }
+footer .fh { font-weight: 700; color: #fff; margin: 0 0 10px; font-size: 13px; letter-spacing: 1.6px; text-transform: uppercase; }
+footer p { margin: 0 0 5px; }
+footer .logo { color: #fff; }
+footer .base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; padding-top: 20px; font-size: 13px; }
+.bar { position: fixed; left: 0; right: 0; bottom: 0; display: none; grid-template-columns: 2fr 1fr; z-index: 30; }
+.bar a { text-align: center; padding: 16px; font-weight: 700; text-decoration: none; color: #fff; font-size: 18px; }
+.bar .c { background: #a34a12; } .bar .t { background: var(--slate); }
+@media (max-width: 980px) {
+  nav.m { display: none; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 36px; padding-top: 56px; padding-bottom: 56px; }
+  .hero::before { background: rgba(20,28,35,.78); }
+  .trust .wrap { grid-template-columns: 1fr 1fr; } .trust div:nth-child(3) { border-left: 0; } .trust div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .mats { grid-template-columns: 1fr; } .warr .wrap, .two { grid-template-columns: 1fr; gap: 36px; } .crest { order: -1; width: 200px; justify-self: start; }
+  .gal { grid-template-columns: 1fr 1fr; } .gal figure:first-child { grid-column: 1 / -1; } .wall { columns: 1; } footer .g { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16.5px; } .wrap { padding: 0 20px; }
+  .util .wrap { justify-content: center; text-align: center; } .util span:last-child { display: none; }
+  .call { display: none; } .bar { display: grid; } footer { padding-bottom: 90px; }
+  header .wrap { min-height: 68px; } .logo { font-size: 20px; } section.s { padding: 56px 0; } .end { padding: 56px 0; }
+  .trust .wrap { grid-template-columns: 1fr; } .trust div + div { border-left: 0; border-top: 1px solid var(--line); }
+  .gal { grid-template-columns: 1fr; } .gal img { min-height: 240px; }
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo site by <a href="../../work.html">Straightedge Web</a>. The company, license number and reviews are made up. Photos are samples.</div>
+<div class="util"><div class="wrap"><span><b>Free roof inspections</b> &middot; Mon to Sat</span><span>CSLB License No. 000000 (C-39 Roofing)</span><span>Serving Los Angeles and the Valley</span></div></div>
+<header><div class="wrap">
+  <a class="logo" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 30 L20 8 L37 30 H29 L20 18 L11 30 Z" fill="#b4561a"/></svg>Ridgeback Roofing</a>
+  <nav class="m" aria-label="Main"><a href="#materials">Roofs we install</a><a href="#warranty">Warranty</a><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#faq">Questions</a></nav>
+  <a class="call" href="tel:+15555550192">(555) 555-0192</a>
+</div></header>
+<main id="top">
+  <section class="hero">
+    <img src="img/hero.webp" srcset="img/hero-800.webp 800w, img/hero.webp 1600w" sizes="(max-width: 700px) 100vw, 100vw" width="1600" height="1067" alt="A roofer in a blue shirt working on window flashing on the roof of a gray house" fetchpriority="high">
+    <span class="sample">Sample photo</span>
+    <div class="wrap">
+      <div>
+        <p class="kick">Residential roofing &middot; Los Angeles</p>
+        <h1>A roof you won't think about for twenty years.</h1>
+        <p class="lede">Repairs and full replacements by the same crew that inspects and quotes your roof. Written estimates, photos of what we find, and a clean yard when we leave.</p>
+        <div class="rate"><span class="s">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span><b style="color:#fff">4.9</b> from 163 Google reviews (sample numbers)</span></div>
+      </div>
+      <aside class="quote" aria-label="Request an inspection">
+        <h2>Book a free roof inspection.</h2>
+        <p>We climb up, photograph what we find, and send a written estimate. No cost, no pressure.</p>
+        <a class="b1" href="tel:+15555550192">Call (555) 555-0192</a>
+        <a class="b2" href="sms:+15555550192">Text us your address</a>
+        <small>Mon to Sat, 7am to 6pm. Emergency tarping 24 hours.</small>
+      </aside>
+    </div>
+  </section>
+
+  <div class="trust"><div class="wrap">
+    <div><b>Licensed</b><span>C-39 roofing contractor, CSLB No. 000000</span></div>
+    <div><b>Written estimates</b><span>Itemized, with photos of what we found</span></div>
+    <div><b>On schedule</b><span>A start date in writing, and a call if it changes</span></div>
+    <div><b>Warrantied work</b><span>Workmanship covered in writing</span></div>
+  </div></div>
+
+  <section class="s" id="materials"><div class="wrap">
+    <div class="head"><h2 class="t">Roofs we install and repair.</h2><p>We tell you honestly whether a repair will do or a replacement makes sense.</p></div>
+    <div class="mats">
+      <article class="mat"><div class="ph"><img src="img/shingles.webp" width="1100" height="825" loading="lazy" alt="A roofer carrying a bundle of shingles across a residential roof"><span class="sample">Sample photo</span></div><div class="tx"><h3>Composition shingle</h3><p>The most common residential roof, in a range of colors and warranties.</p></div></article>
+      <article class="mat"><div class="ph"><img src="img/tile.webp" width="1100" height="825" loading="lazy" alt="Workers installing dark roof tiles on a new roof frame"><span class="sample">Sample photo</span></div><div class="tx"><h3>Tile</h3><p>Repair, re-set and replacement for clay and concrete tile roofs.</p></div></article>
+      <article class="mat"><div class="ph"><img src="img/detail.webp" width="1100" height="825" loading="lazy" alt="A finished gable and dormer window on a shingled roof"><span class="sample">Sample photo</span></div><div class="tx"><h3>Details and flashing</h3><p>Valleys, vents and skylights, where most leaks start.</p></div></article>
+    </div>
+  </div></section>
+
+  <section class="s warr" id="warranty"><div class="wrap">
+    <svg class="crest" viewBox="0 0 220 260" role="img" aria-label="Workmanship warranty crest"><path d="M110 8 L206 40 V122 C206 188 160 232 110 252 C60 232 14 188 14 122 V40 Z" fill="#2b3844" stroke="#d27a3b" stroke-width="5"/><path d="M110 24 L192 51 V121 C192 178 152 217 110 235 C68 217 28 178 28 121 V51 Z" fill="none" stroke="#d27a3b" stroke-width="2"/><path d="M60 116 L110 66 L160 116 H140 L110 86 L80 116 Z" fill="#d27a3b"/><text x="110" y="150" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="30" fill="#fff" style="font-stretch:80%">10 YEAR</text><text x="110" y="176" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="14" fill="#f0b48a" letter-spacing="3">WORKMANSHIP</text><text x="110" y="196" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="14" fill="#f0b48a" letter-spacing="3">WARRANTY</text></svg>
+    <div>
+      <h2 class="t">If it leaks, we come back.</h2>
+      <p>Every replacement carries a written workmanship warranty (the numbers here are a sample). It is in your contract, not buried in a brochure.</p>
+      <ul><li><b>Written.</b>The warranty is part of your agreement.</li><li><b>Photographed.</b>You see the roof before, during and after.</li><li><b>Cleaned up.</b>Nails, debris and old shingles are gone before we leave.</li></ul>
+    </div>
+  </div></section>
+
+  <section class="s" id="work"><div class="wrap">
+    <div class="head"><h2 class="t">Recent work.</h2><p>Real jobs, with real photos, on your own site.</p></div>
+    <div class="gal">
+      <figure><img src="img/work-1.webp" width="1100" height="825" loading="lazy" alt="A roofer in a harness working with a power tool on a shingle roof"><figcaption>Re-roof, Woodland Hills (sample photo)</figcaption></figure>
+      <figure><img src="img/work-2.webp" width="1100" height="825" loading="lazy" alt="A roofer in a bright shirt working on a shingled roof"><figcaption>Repair, Tarzana (sample photo)</figcaption></figure>
+      <figure><img src="img/work-3.webp" width="1100" height="825" loading="lazy" alt="Two roofers working together on the roof of a house"><figcaption>Replacement, Encino (sample photo)</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="s rev" id="reviews"><div class="wrap">
+    <div class="score"><span class="n">4.9</span><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="t2">Google rating &middot; 163 reviews (sample numbers)</span></div>
+    <div class="wall">
+      <figure><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Sample review text goes here, quoted word for word from the owner's Google listing.&rdquo;</blockquote><figcaption>Google review, March 2026</figcaption></figure>
+      <figure><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;A shorter one.&rdquo;</blockquote><figcaption>Google review, March 2026</figcaption></figure>
+      <figure><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Reviews of different lengths sit side by side, so the wall reads like real customers and not a template.&rdquo;</blockquote><figcaption>Google review, February 2026</figcaption></figure>
+      <figure><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Each one carries its month, so people can see the praise is recent.&rdquo;</blockquote><figcaption>Google review, January 2026</figcaption></figure>
+    </div>
+  </div></section>
+
+  <div class="fin"><div class="wrap"><div><b>Financing available.</b><span>Spread the cost of a new roof over monthly payments (sample offer).</span></div><a href="tel:+15555550192">Ask about financing</a></div></div>
+
+  <section class="s" id="faq"><div class="wrap two">
+    <div><h2 class="t">Questions</h2><p style="color:#5f6a74;font-size:19px;max-width:20em">The things people ask before they call.</p></div>
+    <div>
+      <details><summary>Is the inspection really free?</summary><p>Yes. The inspection and the written estimate cost nothing, and there is no pressure to sign.</p></details>
+      <details><summary>Do you pull permits?</summary><p>When the job needs one, we handle it with your city or the county.</p></details>
+      <details><summary>How long does a new roof take?</summary><p>Most homes take a few days, depending on size and weather. You get the schedule in writing before we start.</p></details>
+      <details><summary>Can you just repair my roof?</summary><p>Often, yes. We tell you honestly whether a repair will hold or a replacement makes more sense, and show you photos either way.</p></details>
+    </div>
+  </div></section>
+
+  <div class="end"><div class="wrap">
+    <h2 class="t">Talk to a roofer.</h2>
+    <a class="n" href="tel:+15555550192">(555) 555-0192</a>
+    <p>Call or text. We answer.</p>
+  </div></div>
+</main>
+<footer><div class="wrap">
+  <div class="g">
+    <div><a class="logo" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 30 L20 8 L37 30 H29 L20 18 L11 30 Z" fill="#d27a3b"/></svg>Ridgeback Roofing</a><p style="margin-top:14px;max-width:26em">Residential roofing across Los Angeles and the San Fernando Valley.</p></div>
+    <div><div class="fh">Contact</div><p>(555) 555-0192</p><p>hello@example.com</p><p>Mon to Sat, 7am to 6pm</p></div>
+    <div><div class="fh">License</div><p>CSLB License No. 000000</p><p>Licensed roofing contractor (C-39)</p></div>
+  </div>
+  <div class="base"><span>&copy; 2026 Ridgeback Roofing</span><span>Demo site made by Straightedge Web. Photos: Unsplash.</span></div>
+</div></footer>
+<nav class="bar" aria-label="Quick contact"><a class="c" href="tel:+15555550192">Call</a><a class="t" href="sms:+15555550192">Text</a></nav>
+</body></html>

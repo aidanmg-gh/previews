@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; base-uri 'none'">
+<meta name="robots" content="noindex">
+<meta name="description" content="Demo website by Straightedge Web for a made-up contractor. Not a real company.">
+<link rel="icon" href="data:,">
+<link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-800.webp 800w, img/hero.webp 1400w" imagesizes="(max-width: 640px) 100vw, 100vw" fetchpriority="high">
+<title>Marlowe &amp; Sons Plumbing | Demo site by Straightedge Web</title>
+<style>
+@font-face { font-family: "Archivo"; font-weight: 400 900; font-stretch: 62% 125%; font-display: swap; src: url(../../fonts/archivo-latin.woff2) format("woff2"); }
+:root { --navy: #13213c; --navy2: #1b2c4d; --red: #c0282d; --cream: #f6f1e7; --paper: #fbf8f2; --ink: #1c2535; --mute: #5b6578; --line: #e0d8c7; --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.65 "Archivo", Arial, sans-serif; -webkit-text-size-adjust: 100%; }
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+.demo { background: #000; color: #fff; font-size: 13px; text-align: center; padding: 7px 12px; }
+.demo a { color: #9fb4ff; }
+.util { background: var(--navy); color: #cfd6e6; font-size: 14px; }
+.util .wrap { display: flex; justify-content: space-between; gap: 6px 24px; flex-wrap: wrap; padding-top: 9px; padding-bottom: 9px; }
+.util b { color: #fff; font-weight: 600; }
+header { position: sticky; top: 0; z-index: 20; background: rgba(251,248,242,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 80px; }
+.logo { text-decoration: none; font-family: var(--serif); font-weight: 700; font-size: 27px; line-height: 1; color: var(--navy); }
+.logo small { display: block; font: 700 11px/1 "Archivo", sans-serif; letter-spacing: 3.2px; color: var(--red); margin-top: 6px; text-transform: uppercase; }
+nav.m { display: flex; gap: 30px; }
+nav.m a { text-decoration: none; font-weight: 600; font-size: 15px; color: #33405a; }
+nav.m a:hover { color: var(--red); }
+.call { background: var(--red); color: #fff; font-weight: 700; text-decoration: none; padding: 13px 22px; white-space: nowrap; border-radius: 3px; }
+.call:hover { background: #a31f24; }
+.hero { padding: 54px 0 64px; }
+.hero .wrap { display: grid; grid-template-columns: 1.02fr .98fr; gap: 60px; align-items: center; }
+.kick { font-size: 13px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--red); margin: 0 0 18px; }
+h1 { font-family: var(--serif); font-size: clamp(40px, 5.6vw, 72px); line-height: 1.02; letter-spacing: -.015em; margin: 0 0 22px; color: var(--navy); font-weight: 700; }
+.lede { font-size: 21px; color: #34405a; max-width: 28em; margin: 0 0 30px; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn { display: inline-block; background: var(--red); color: #fff; font-weight: 800; font-size: 20px; padding: 17px 28px; text-decoration: none; border-radius: 3px; }
+.btn:hover { background: #a31f24; }
+.btn.o { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 15px 24px; font-size: 18px; }
+.btn.o:hover { background: var(--navy); color: #fff; }
+.rate { display: flex; align-items: center; gap: 12px; margin-top: 28px; color: var(--mute); font-size: 15px; }
+.rate .s { color: #e0a313; letter-spacing: 2px; font-size: 19px; }
+.rate b { color: var(--navy); }
+.fig { position: relative; margin: 0; }
+.fig::after { content: "Sample photo"; position: absolute; left: 10px; bottom: 10px; background: rgba(0,0,0,.62); color: #fff; font-size: 11px; letter-spacing: .6px; padding: 3px 8px; border-radius: 2px; }
+.hero .fig img { width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover; border-radius: 4px; }
+.hero .badge { position: absolute; left: -26px; bottom: 44px; background: var(--navy); color: #fff; padding: 18px 22px; border-radius: 3px; max-width: 230px; z-index: 2; }
+.hero .badge b { display: block; font-family: var(--serif); font-size: 24px; line-height: 1.1; margin-bottom: 4px; }
+.hero .badge span { font-size: 14px; color: #c3cde3; }
+.trust { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.trust .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.trust div { padding: 26px 24px; }
+.trust div + div { border-left: 1px solid var(--line); }
+.trust b { display: block; font-family: var(--serif); font-size: 20px; color: var(--navy); margin-bottom: 3px; }
+.trust span { font-size: 15px; color: var(--mute); line-height: 1.45; display: block; }
+section.s { padding: 84px 0; }
+.head { max-width: 40em; margin-bottom: 44px; }
+h2 { font-family: var(--serif); font-size: clamp(32px, 4.2vw, 50px); line-height: 1.08; color: var(--navy); margin: 0 0 14px; letter-spacing: -.01em; }
+.head p { color: var(--mute); font-size: 19px; margin: 0; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.card .fig img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.card .t { padding: 22px 24px 26px; }
+.card h3 { font-family: var(--serif); font-size: 25px; margin: 0 0 8px; color: var(--navy); }
+.card p { margin: 0; color: var(--mute); font-size: 16px; }
+.more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 44px; margin-top: 40px; border-top: 2px solid var(--navy); }
+.more div { padding: 16px 0; border-bottom: 1px solid var(--line); font-weight: 600; color: #2a3650; }
+.how { background: var(--navy); color: #fff; }
+.how h2 { color: #fff; }
+.how .head p { color: #b4bfd6; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--red); }
+.steps div { padding: 28px 30px 6px 0; }
+.steps div + div { padding-left: 30px; border-left: 1px solid #2f4168; }
+.steps .n { font-family: var(--serif); font-size: 46px; color: #e9a1a4; line-height: 1; margin-bottom: 10px; display: block; }
+.steps b { font-size: 22px; display: block; margin-bottom: 6px; }
+.steps p { margin: 0; color: #b4bfd6; }
+.split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+.split .fig img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; border-radius: 4px; }
+.split p { color: #34405a; font-size: 19px; }
+.pts { list-style: none; margin: 22px 0 0; padding: 0; }
+.pts li { padding: 11px 0 11px 30px; position: relative; border-bottom: 1px solid var(--line); }
+.pts li::before { content: ""; position: absolute; left: 2px; top: 19px; width: 14px; height: 8px; border-left: 3px solid var(--red); border-bottom: 3px solid var(--red); transform: rotate(-45deg) translateY(-4px); }
+.rev { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.score { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 34px; }
+.score .n { font-family: var(--serif); font-size: 76px; font-weight: 700; color: var(--navy); line-height: 1; }
+.score .st { color: #e0a313; letter-spacing: 3px; font-size: 26px; }
+.score .t { color: var(--mute); }
+.q { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.q figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 26px 26px 22px; }
+.q .st { color: #e0a313; letter-spacing: 3px; font-size: 17px; }
+.q blockquote { margin: 10px 0 14px; font-size: 18px; line-height: 1.5; }
+.q figcaption { font-size: 14px; color: var(--mute); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.areas { columns: 2; column-gap: 30px; margin: 0; padding: 0; list-style: none; }
+.areas li { padding: 9px 0; border-bottom: 1px solid var(--line); break-inside: avoid; font-weight: 600; color: #2a3650; }
+details { border-bottom: 1px solid var(--line); }
+details:first-of-type { border-top: 2px solid var(--navy); }
+summary { cursor: pointer; padding: 18px 40px 18px 0; font-weight: 700; font-size: 19px; position: relative; list-style: none; color: var(--navy); }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 4px; top: 12px; font-size: 30px; font-weight: 400; color: var(--red); }
+details[open] summary::after { content: "\2212"; }
+details p { margin: 0 0 18px; color: #34405a; max-width: 38em; }
+.cta { background: var(--red); color: #fff; padding: 76px 0; }
+.cta .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 28px; }
+.cta h2 { color: #fff; margin: 0 0 8px; }
+.cta p { margin: 0; color: #fbe3e4; font-size: 19px; }
+.cta .btn { background: #fff; color: var(--red); font-size: 32px; padding: 20px 34px; }
+footer { background: #0d1730; color: #9aa6c0; font-size: 15px; padding: 54px 0 30px; }
+footer .g { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid #25335a; }
+footer .fh { font-weight: 700; color: #fff; margin: 0 0 12px; font-size: 14px; letter-spacing: 1.6px; text-transform: uppercase; }
+footer p { margin: 0 0 6px; }
+footer .logo { color: #fff; }
+footer .logo small { color: #f2a3a6; }
+footer .base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; padding-top: 22px; font-size: 13px; }
+.bar { position: fixed; left: 0; right: 0; bottom: 0; display: none; grid-template-columns: 2fr 1fr; z-index: 30; }
+.bar a { text-align: center; padding: 16px; font-weight: 700; text-decoration: none; color: #fff; font-size: 18px; }
+.bar .c { background: var(--red); } .bar .t { background: var(--navy); }
+@media (max-width: 960px) {
+  nav.m { display: none; }
+  .hero .wrap, .split, .two { grid-template-columns: 1fr; gap: 38px; }
+  .hero .badge { left: 14px; bottom: 34px; }
+  .hero .fig { order: -1; } .hero .fig img { aspect-ratio: 16 / 11; object-position: 50% 30%; }
+  .trust .wrap { grid-template-columns: 1fr 1fr; } .trust div:nth-child(3) { border-left: 0; } .trust div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .cards, .q, .steps { grid-template-columns: 1fr; } .more { grid-template-columns: 1fr 1fr; }
+  .steps div + div { padding-left: 0; border-left: 0; border-top: 1px solid #2f4168; }
+  footer .g { grid-template-columns: 1fr; gap: 26px; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16.5px; } .wrap { padding: 0 20px; }
+  .util .wrap { justify-content: center; text-align: center; } .util span:last-child { display: none; }
+  .call { display: none; } .bar { display: grid; } footer { padding-bottom: 90px; }
+  header .wrap { min-height: 68px; } .hero { padding: 30px 0 44px; } section.s { padding: 56px 0; } .cta { padding: 56px 0; }
+  .btn { display: block; text-align: center; width: 100%; } .btn.o { padding: 15px 20px; } .hero .badge { display: none; }
+  .more { grid-template-columns: 1fr; } .areas { columns: 1; } .trust .wrap { grid-template-columns: 1fr; } .trust div + div { border-left: 0; border-top: 1px solid var(--line); }
+  .cta .btn { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo site by <a href="../../work.html">Straightedge Web</a>. The company, license number and reviews are made up. Photos are samples.</div>
+<div class="util"><div class="wrap"><span><b>Open 7 days</b> &middot; 7am to 8pm</span><span>CSLB License No. 000000</span><span>Serving the San Fernando Valley</span></div></div>
+<header><div class="wrap">
+  <a class="logo" href="#top">Marlowe &amp; Sons<small>Plumbing</small></a>
+  <nav class="m" aria-label="Main"><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#areas">Areas</a><a href="#faq">Questions</a></nav>
+  <a class="call" href="tel:+15555550147">Call (555) 555-0147</a>
+</div></header>
+<main id="top">
+  <section class="hero"><div class="wrap">
+    <div>
+      <p class="kick">Family owned plumbing &middot; Woodland Hills</p>
+      <h1>Plumbing done right, with the price agreed first.</h1>
+      <p class="lede">Leaks, drains, water heaters and sewer lines. A licensed plumber at your door, a written quote before we start, and the mess cleaned up when we leave.</p>
+      <div class="btns"><a class="btn" href="tel:+15555550147">Call (555) 555-0147</a><a class="btn o" href="sms:+15555550147">Text us</a></div>
+      <div class="rate"><span class="s">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span><b>5.0</b> from 214 Google reviews (sample numbers)</span></div>
+    </div>
+    <figure class="fig"><img src="img/hero.webp" srcset="img/hero-800.webp 800w, img/hero.webp 1400w" sizes="(max-width: 700px) 100vw, 100vw" width="1400" height="1610" alt="A plumber working in a tiled bathroom with a toolbox on the floor" fetchpriority="high"></figure>
+  </div></section>
+
+  <div class="trust"><div class="wrap">
+    <div><b>Licensed</b><span>CSLB License No. 000000, checked on the state's public record</span></div>
+    <div><b>Price first</b><span>A written quote you approve before any work starts</span></div>
+    <div><b>On time</b><span>A call before we arrive, and a real arrival window</span></div>
+    <div><b>Backed in writing</b><span>12 months on our workmanship</span></div>
+  </div></div>
+
+  <section class="s" id="services"><div class="wrap">
+    <div class="head"><h2>What we fix.</h2><p>The jobs we do every week, done by the same people who quote them.</p></div>
+    <div class="cards">
+      <article class="card"><figure class="fig"><img src="img/work-1.webp" width="1100" height="733" loading="lazy" alt="A plumber's hands fixing pipes under a sink"></figure><div class="t"><h3>Leaks and repairs</h3><p>Pipes, traps, valves and fixtures. We find the cause and show you before we fix it.</p></div></article>
+      <article class="card"><figure class="fig"><img src="img/faucet.webp" width="1100" height="733" loading="lazy" alt="Water running from a modern kitchen faucet into a glass"></figure><div class="t"><h3>Faucets and fixtures</h3><p>Kitchens, baths and laundry rooms. Replacement or new installs, with warranty-backed parts.</p></div></article>
+      <article class="card"><figure class="fig"><img src="img/rough-in.webp" width="1100" height="733" loading="lazy" alt="New copper and plastic plumbing lines in an open wall during a remodel"></figure><div class="t"><h3>Repiping and remodels</h3><p>Copper and PEX, with a written scope and a fixed price for the whole job.</p></div></article>
+    </div>
+    <div class="more"><div>Water heaters</div><div>Drain cleaning</div><div>Sewer line repair</div><div>Toilets</div><div>Garbage disposals</div><div>Water treatment</div></div>
+  </div></section>
+
+  <section class="s" id="about"><div class="wrap split">
+    <figure class="fig"><img src="img/work-3.webp" width="1100" height="733" loading="lazy" alt="A plumber's arm reaching under a sink to tighten a fitting"></figure>
+    <div>
+      <h2>You talk to the people who do the work.</h2>
+      <p>Call or text and a real person answers. We look at the problem, write the quote, and you say yes or no. Then we fix it, test it and clean up.</p>
+      <ul class="pts"><li>The same plumber quotes and fixes the job</li><li>Shoe covers on, drop cloths down, every visit</li><li>Old parts shown to you before they go in the truck</li><li>Pay when the work is done and you are happy</li></ul>
+    </div>
+  </div></section>
+
+  <section class="s rev" id="reviews"><div class="wrap">
+    <div class="score"><span class="n">5.0</span><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="t">214 Google reviews (sample numbers)</span></div>
+    <div class="q">
+      <figure><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Sample review text goes here, quoted word for word from the owner's Google listing.&rdquo;</blockquote><figcaption>Google review, March 2026</figcaption></figure>
+      <figure><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;A second review appears here, exactly as the customer wrote it.&rdquo;</blockquote><figcaption>Google review, February 2026</figcaption></figure>
+      <figure><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;A third one, with the month, so people can see the praise is recent.&rdquo;</blockquote><figcaption>Google review, January 2026</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="s" id="areas"><div class="wrap two">
+    <div><h2>Where we work.</h2><p style="color:#5b6578;font-size:19px;max-width:24em">Most calls are answered within the hour, and most visits are the same day.</p></div>
+    <ul class="areas"><li>Woodland Hills</li><li>Tarzana</li><li>Encino</li><li>Canoga Park</li><li>Reseda</li><li>Northridge</li><li>Sherman Oaks</li><li>Van Nuys</li><li>Studio City</li><li>Calabasas</li></ul>
+  </div></section>
+
+  <section class="s" id="faq" style="padding-top:0"><div class="wrap two">
+    <div><h2>Questions</h2><p style="color:#5b6578;font-size:19px;max-width:24em">What people ask before they call.</p></div>
+    <div>
+      <details><summary>Do you charge to come out?</summary><p>No. The visit and the written estimate are free. You only pay if you approve the work.</p></details>
+      <details><summary>Can you come today?</summary><p>Usually. Call before noon for the best chance of a same-day visit. Emergencies are answered 24 hours.</p></details>
+      <details><summary>Are you licensed?</summary><p>Yes. Our CSLB license number is on every page of this site, and you can check it on the state's public record.</p></details>
+      <details><summary>How do I pay?</summary><p>When the job is finished and you are satisfied. We take cards, checks and cash.</p></details>
+    </div>
+  </div></section>
+
+  <div class="cta"><div class="wrap">
+    <div><h2>Talk to a plumber today.</h2><p>No pressure. You get a price before we start.</p></div>
+    <a class="btn" href="tel:+15555550147">(555) 555-0147</a>
+  </div></div>
+</main>
+<footer><div class="wrap">
+  <div class="g">
+    <div><a class="logo" href="#top">Marlowe &amp; Sons<small>Plumbing</small></a><p style="margin-top:16px;max-width:26em">Family owned plumbing for the San Fernando Valley.</p></div>
+    <div><div class="fh">Contact</div><p>(555) 555-0147</p><p>hello@example.com</p><p>Open 7 days, 7am to 8pm</p></div>
+    <div><div class="fh">License</div><p>CSLB License No. 000000</p><p>Licensed plumbing contractor</p></div>
+  </div>
+  <div class="base"><span>&copy; 2026 Marlowe &amp; Sons Plumbing</span><span>Demo site made by Straightedge Web. Photos: Unsplash.</span></div>
+</div></footer>
+<nav class="bar" aria-label="Quick contact"><a class="c" href="tel:+15555550147">Call</a><a class="t" href="sms:+15555550147">Text</a></nav>
+</body></html>
