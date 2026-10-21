@@ -1,1 +1,246 @@
-<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Straightedge Web</title><body style="font:16px system-ui;margin:20vh auto;max-width:30em;padding:0 16px;color:#121619">Straightedge Web. Previews are shared by direct link.</body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Straightedge Web | Websites for contractors in Los Angeles</title>
+<meta name="description" content="I rebuild websites for LA contractors: your number on the first screen, your real reviews and photos, your license on every page. $1,200 once, or $400 and $75 a month.">
+<link rel="canonical" href="https://straightedgeweb.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Straightedge Web">
+<meta property="og:description" content="Websites for contractors in Los Angeles. Your work is better than your website. Let's fix that.">
+<meta property="og:url" content="https://straightedgeweb.com/">
+<meta property="og:image" content="https://straightedgeweb.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Straightedge Web","url":"https://straightedgeweb.com/","telephone":"+1-323-484-6856","email":"straightedgeweb@gmail.com","founder":"Aidan George","areaServed":"Los Angeles, CA","description":"Websites for contractors."}
+</script>
+<style>
+  @font-face { font-family: "Archivo"; font-weight: 400 900; font-stretch: 62% 125%; font-display: swap; src: url(fonts/archivo-latin.woff2) format("woff2"); }
+  :root { --blue: #2450E8; --ink: #121619; --mute: #5b6470; --line: #d9dde3; --paper: #fff; --soft: #f5f6f8; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 "Archivo", Arial, Helvetica, sans-serif; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--ink); color: #fff; padding: 10px 14px; z-index: 10; }
+  .skip:focus { left: 16px; top: 16px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* header */
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 76px; }
+  .lockup { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .lockup svg { width: 40px; height: 40px; flex: none; display: block; }
+  .word { line-height: 1; }
+  .word .name { font-weight: 850; font-stretch: 88%; font-size: 21px; letter-spacing: -.2px; }
+  .word .web { font-weight: 600; font-size: 10px; letter-spacing: 5px; color: var(--blue); margin-top: 4px; display: flex; align-items: center; gap: 7px; }
+  .rule { flex: 1; min-width: 70px; height: 7px; opacity: .85; border-bottom: 1px solid var(--ink);
+    background: repeating-linear-gradient(to right, var(--ink) 0 1px, transparent 1px 6px) bottom / 100% 4px no-repeat,
+                repeating-linear-gradient(to right, var(--ink) 0 1px, transparent 1px 30px) bottom / 100% 7px no-repeat; }
+  .hcall { font-weight: 700; text-decoration: none; white-space: nowrap; border: 2px solid var(--ink); padding: 9px 14px; }
+  .hcall:hover { background: var(--ink); color: #fff; }
+
+  /* hero */
+  .hero { padding: 72px 0 64px; }
+  h1 { font-weight: 850; font-stretch: 88%; font-size: clamp(40px, 7.4vw, 82px); line-height: .98; letter-spacing: -1.5px; margin: 0; max-width: 13ch; }
+  h1 span { color: var(--blue); }
+  .lede { font-size: clamp(18px, 2.2vw, 21px); max-width: 38ch; margin: 26px 0 32px; color: #2a3038; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; font-weight: 700; text-decoration: none; padding: 15px 22px; border: 2px solid var(--blue); }
+  .btn.solid { background: var(--blue); color: #fff; }
+  .btn.solid:hover { background: #1b3fc0; border-color: #1b3fc0; }
+  .btn.line { color: var(--blue); }
+  .btn.line:hover { background: var(--blue); color: #fff; }
+  .small { font-size: 15px; color: var(--mute); margin-top: 16px; }
+
+  /* ruler divider, the logo's tick marks */
+  .ticks { height: 14px; border-bottom: 1px solid var(--ink); opacity: .5;
+    background: repeating-linear-gradient(to right, var(--ink) 0 1px, transparent 1px 12px) bottom / 100% 6px no-repeat,
+                repeating-linear-gradient(to right, var(--ink) 0 1px, transparent 1px 120px) bottom / 100% 14px no-repeat; }
+
+  /* sections with a left-rail label */
+  section.row { padding: 56px 0; border-top: 1px solid var(--line); }
+  section.row .wrap { display: grid; grid-template-columns: 220px 1fr; gap: 40px; }
+  .rail { font-weight: 700; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); padding-top: 6px; }
+  h2 { font-weight: 800; font-stretch: 92%; font-size: clamp(26px, 3.4vw, 36px); line-height: 1.1; letter-spacing: -.5px; margin: 0 0 18px; max-width: 24ch; }
+  p { margin: 0 0 14px; max-width: 62ch; }
+
+  .gets { list-style: none; margin: 8px 0 0; padding: 0; border-top: 1px solid var(--line); }
+  .gets li { padding: 13px 0; border-bottom: 1px solid var(--line); max-width: 62ch; }
+  .gets b { font-weight: 700; }
+
+  .steps { counter-reset: s; list-style: none; margin: 8px 0 0; padding: 0; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 48px 1fr; padding: 14px 0; border-bottom: 1px solid var(--line); max-width: 66ch; }
+  .steps li::before { content: counter(s, decimal-leading-zero); font-weight: 800; color: var(--blue); }
+
+  .prices { display: grid; grid-template-columns: 1fr 1fr; border: 2px solid var(--ink); margin-top: 8px; }
+  .plan { padding: 26px 24px; }
+  .plan + .plan { border-left: 2px solid var(--ink); }
+  .plan h3 { margin: 0; font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .price { font-weight: 850; font-stretch: 88%; font-size: 48px; line-height: 1; margin: 14px 0 4px; }
+  .per { color: var(--mute); font-size: 15px; margin-bottom: 18px; }
+  .plan dl { margin: 0; }
+  .plan dt { font-weight: 700; font-size: 14px; margin-top: 12px; }
+  .plan dd { margin: 2px 0 0; font-size: 15px; color: #2a3038; }
+  .plan.pick { background: var(--soft); }
+  .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; background: var(--blue); color: #fff; padding: 3px 8px; margin-left: 8px; vertical-align: 2px; }
+  .fine { font-size: 15px; color: var(--mute); margin-top: 16px; }
+
+  .contact { background: var(--ink); color: #fff; padding: 64px 0; }
+  .contact h2 { color: #fff; font-size: clamp(30px, 4.6vw, 52px); max-width: 18ch; }
+  .contact p { color: #c9ced6; }
+  .contact .big { display: block; font-weight: 850; font-stretch: 88%; font-size: clamp(32px, 6vw, 60px); line-height: 1.05; text-decoration: none; color: #fff; margin: 18px 0 6px; }
+  .contact .mail { color: #9fb4ff; font-weight: 600; font-size: 19px; }
+  .contact .btn.solid { margin-top: 24px; }
+  footer { background: var(--ink); color: #8a929d; font-size: 14px; border-top: 1px solid #2a3038; }
+  footer .wrap { padding-top: 22px; padding-bottom: 90px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+  /* phone call bar */
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; display: none; grid-template-columns: 1fr 1fr; z-index: 5; border-top: 1px solid #000; }
+  .bar a { text-align: center; padding: 15px 8px; font-weight: 700; text-decoration: none; }
+  .bar .c { background: var(--blue); color: #fff; }
+  .bar .t { background: var(--ink); color: #fff; }
+
+  @media (max-width: 760px) {
+    section.row .wrap { grid-template-columns: 1fr; gap: 6px; }
+    .prices { grid-template-columns: 1fr; }
+    .plan + .plan { border-left: 0; border-top: 2px solid var(--ink); }
+    .hero { padding: 44px 0 44px; }
+    .hcall { display: none; }
+    .bar { display: grid; }
+  }
+  @media (min-width: 761px) { footer .wrap { padding-bottom: 22px; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap">
+    <a class="lockup" href="/" aria-label="Straightedge Web, home">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#2450E8"/><path fill="#fff" d="M31 18 H78 L72 32 H36 V43 H69 L78 52 V73 L69 82 H22 L28 68 H64 V57 H31 L22 48 V27 Z"/></svg>
+      <span class="word"><span class="name" style="display:block">STRAIGHTEDGE</span><span class="web">WEB<span class="rule"></span></span></span>
+    </a>
+    <a class="hcall" href="tel:+13234846856">(323) 484-6856</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Your work is better than <span>your website.</span></h1>
+      <p class="lede">I rebuild websites for contractors in Los Angeles. Your number on the first screen, your real reviews and job photos up front, your license on every page, and it works on the phone in your customer's hand.</p>
+      <div class="ctas">
+        <a class="btn solid" href="tel:+13234846856">Call or text (323) 484-6856</a>
+        <a class="btn line" href="mailto:straightedgeweb@gmail.com?subject=Website">Email me</a>
+      </div>
+      <p class="small">Want to see it first? Send me your current website and I'll redo your homepage for free. If you don't like it, that's the end of it.</p>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="ticks" aria-hidden="true"></div></div>
+
+  <section class="row" aria-labelledby="h-what">
+    <div class="wrap">
+      <div class="rail">What you get</div>
+      <div>
+        <h2 id="h-what">A site built around how people actually hire you.</h2>
+        <p>Most people find a contractor on their phone, read a few reviews, and call. Your site should make that take ten seconds.</p>
+        <ul class="gets">
+          <li><b>Tap to call</b> on the first screen of every page, plus a call bar that stays on screen on phones.</li>
+          <li><b>Your Google reviews</b>, word for word, with your star rating and a link to your listing.</li>
+          <li><b>Your real photos.</b> Your crew, your trucks, your jobs. No stock pictures.</li>
+          <li><b>A page for each main service</b>, a photo gallery, and a contact form that sends the request straight to you.</li>
+          <li><b>Your CSLB license number on every page</b>, and a privacy page, built to follow California's rules for contractor ads and websites.</li>
+          <li><b>Fast and clean.</b> No pop-ups, no tracking, no chat widgets. Checked with Google's own speed and accessibility tools before it goes live.</li>
+          <li><b>It still looks like you.</b> I keep your logo, your colors and what already works, and fix the rest.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" aria-labelledby="h-price">
+    <div class="wrap">
+      <div class="rail">Price</div>
+      <div>
+        <h2 id="h-price">Two ways to do it. No surprises.</h2>
+        <div class="prices">
+          <div class="plan">
+            <h3>Own it</h3>
+            <div class="price">$1,200</div>
+            <div class="per">one time</div>
+            <dl>
+              <dt>Hosting</dt><dd>You host it on your own account. I set it up with you.</dd>
+              <dt>Changes</dt><dd>Anything broken gets fixed free for 30 days. After that, $75 an hour.</dd>
+              <dt>Payment</dt><dd>Half when you say yes, half when it goes live.</dd>
+            </dl>
+          </div>
+          <div class="plan pick">
+            <h3>Managed <span class="tag">Less up front</span></h3>
+            <div class="price">$400</div>
+            <div class="per">to start, then $75 a month</div>
+            <dl>
+              <dt>Hosting</dt><dd>Included. I keep it running.</dd>
+              <dt>Changes</dt><dd>New photos, reviews, hours, phone number: done within 2 business days, included.</dd>
+              <dt>Leaving</dt><dd>Cancel any time with 30 days' notice. You get all your files.</dd>
+            </dl>
+          </div>
+        </div>
+        <p class="fine">Either way, the domain stays in your name and you own your content and photos. Bigger changes like a new page are quoted before I start.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" aria-labelledby="h-how">
+    <div class="wrap">
+      <div class="rail">How it works</div>
+      <div>
+        <h2 id="h-how">About a week, start to finish.</h2>
+        <ol class="steps">
+          <li><span><b>You say yes.</b> A short, plain-English agreement.</span></li>
+          <li><span><b>You send what I need.</b> Your photos, your license number, the towns you cover. I pull your reviews from your public Google listing.</span></li>
+          <li><span><b>You see the first version in about a week.</b> Two rounds of changes before it goes live.</span></li>
+          <li><span><b>It goes live.</b> I connect your domain and your contact form.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" aria-labelledby="h-honest">
+    <div class="wrap">
+      <div class="rail">Straight answers</div>
+      <div>
+        <h2 id="h-honest">What I won't promise.</h2>
+        <p>I can't promise you'll be first on Google or how many calls you'll get. Anyone who does is guessing. What I can promise is a site that's fast, clear, honest, and easy to call from.</p>
+        <p>You deal with me directly, not an agency. I'm Aidan, I'm in LA, and I answer my phone.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="contact" aria-labelledby="h-contact">
+  <div class="wrap">
+    <h2 id="h-contact">Send me your website. I'll show you what it could be.</h2>
+    <p>Call, text, or email. Free to look, no pressure either way.</p>
+    <a class="big" href="tel:+13234846856">(323) 484-6856</a>
+    <a class="mail" href="mailto:straightedgeweb@gmail.com?subject=Website">straightedgeweb@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Straightedge Web &middot; Aidan George &middot; Los Angeles, CA</span>
+    <span>No cookies, no tracking on this site.</span>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick contact">
+  <a class="c" href="tel:+13234846856">Call</a>
+  <a class="t" href="sms:+13234846856">Text</a>
+</nav>
+</body>
+</html>

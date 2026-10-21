@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512">
+  <title>Straightedge Web mark</title>
+  <!-- An S made only of straight edges; both ends cut at an angle like a board cut against a straightedge. -->
+  <rect width="100" height="100" fill="#2450E8"/>
+  <path fill="#FFFFFF" d="M31 18 H78 L72 32 H36 V43 H69 L78 52 V73 L69 82 H22 L28 68 H64 V57 H31 L22 48 V27 Z"/>
+</svg>
