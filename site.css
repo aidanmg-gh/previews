@@ -51,6 +51,11 @@ nav.main a.cta:hover { background: var(--blue-d); }
 .hero-copy { padding-bottom: 56px; }
 .fig { margin: 0; align-self: center; position: relative; padding-top: 6px; }
 .fig svg { display: block; width: 100%; height: auto; max-width: 400px; margin: 0 0 0 auto; }
+.fig .co path { stroke: #7d9bff; stroke-width: 1.5; fill: none; }
+.fig .co .end { fill: #7d9bff; }
+.fig .co .tag circle { fill: var(--blue); stroke: #fff; stroke-width: 2; }
+.fig .co .tag text { fill: #fff; font-size: 15px; font-weight: 800; text-anchor: middle; }
+.fig .tap { opacity: 0; }
 .fig figcaption { font-size: 13px; color: var(--mute); max-width: 400px; margin: 0 0 0 auto; padding: 8px 0 22px; }
 .ruler { height: 26px; background: repeating-linear-gradient(90deg, var(--blue) 0 2px, transparent 2px 12px) bottom / 100% 12px no-repeat, repeating-linear-gradient(90deg, var(--blue) 0 2px, transparent 2px 60px) bottom / 100% 24px no-repeat; border-bottom: 2px solid var(--blue); background-color: var(--deep); }
 
@@ -107,6 +112,14 @@ section.alt { background: var(--bg2); }
 .plan dt { color: var(--mute); font-size: 15px; padding-top: 1px; }
 .plan dd { margin: 0; font-size: 17px; line-height: 1.5; }
 .fine-print { margin-top: 28px; color: var(--mute); font-size: 16px; max-width: 70ch; }
+.extras { margin-top: 64px; }
+.extras h3 { font-size: 15px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--mute); font-weight: 600; }
+.extras .intro { margin-top: 8px; }
+.extras dl { margin: 24px 0 0; border-top: 1px solid var(--rule2); }
+.extras dl > div { display: grid; grid-template-columns: 280px minmax(0, 1fr) 150px; gap: 24px; padding: 15px 0; border-bottom: 1px solid var(--rule); }
+.extras dt { color: var(--text); font-weight: 600; }
+.extras dd { margin: 0; line-height: 1.5; }
+.extras dd.cost { color: #fff; font-weight: 600; text-align: right; white-space: nowrap; }
 
 /* questions */
 .faq-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 72px; align-items: start; }
@@ -178,6 +191,8 @@ footer a:hover { color: #fff; }
   .key li { grid-template-columns: 30px minmax(0, 1fr); gap: 4px 14px; } .key p { grid-column: 2; }
   .show { grid-template-columns: 1fr 1fr; } .show a:first-child { grid-column: 1 / -1; }
   .prices { grid-template-columns: 1fr; } .plan, .plan + .plan { padding: 30px 0 8px; border-left: 0; } .plan + .plan { border-top: 1px solid var(--rule); }
+  .extras dl > div { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 20px; } .extras dd:not(.cost) { grid-column: 1; grid-row: 2; color: var(--body); }
+  .extras dd.cost { grid-column: 2; grid-row: 1; }
   .shots, .dblock.flip .shots { grid-template-columns: minmax(0, 1fr) 30%; gap: 14px; } .dblock.flip .shots .ph { order: 0; } .shots .ph { border-width: 4px; border-radius: 14px; }
 }
 @media (max-width: 760px) {
@@ -189,4 +204,56 @@ footer a:hover { color: #fff; }
   .ctas .btn { width: 100%; text-align: center; }
   .send input { border-right: 2px solid var(--rule2); border-bottom: 0; } .send button { width: 100%; }
   .plan dl > div, .notes div { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* motion: CSS only, no scripts. Everything sits still for anyone who has reduced motion turned on. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rise { from { opacity: 0; transform: translateY(26px); } }
+  @keyframes fade { from { opacity: 0; } }
+  @keyframes snap { from { transform: scaleX(0); } }
+  @keyframes draw { from { stroke-dashoffset: 1; } }
+  @keyframes pop { 0% { opacity: 0; transform: scale(.3); } 70% { opacity: 1; transform: scale(1.12); } }
+  @keyframes tap { 0% { opacity: .6; transform: scale(1); } 100% { opacity: 0; transform: scale(1.12, 1.6); } }
+  @keyframes measure { from { background-size: 0 12px, 0 24px; } }
+  @keyframes bar-up { from { transform: translateY(100%); } }
+  @keyframes open { from { opacity: 0; transform: translateY(-8px); } }
+
+  /* first screen: headline, then the blue line snaps under "website." like a chalk line */
+  .hero h1, .page-hero h1 { animation: rise .8s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero h1 .line::after { transform-origin: left; animation: snap .55s .7s cubic-bezier(.7, 0, .2, 1) both; }
+  .hero .lede, .page-hero p { animation: rise .8s .15s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero .ctas { animation: rise .8s .28s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero .note { animation: fade .8s .5s both; }
+  .ruler { animation: measure 1.2s .3s cubic-bezier(.6, 0, .2, 1) both; }
+
+  /* the phone drawing builds itself, then the numbers come in 1 to 6 and the call button gets tapped */
+  .fig .phone { transform-box: fill-box; transform-origin: center; animation: rise .9s .1s cubic-bezier(.2, .7, .2, 1) both; }
+  .fig .b { animation: fade .4s calc(.5s + var(--i) * .1s) both; }
+  .fig .star { transform-box: fill-box; transform-origin: center; animation: pop .35s calc(.95s + var(--s) * .07s) both; }
+  .fig .co path { stroke-dasharray: 1; animation: draw .4s calc(1.4s + var(--n) * .22s) ease-out both; }
+  .fig .co .end { animation: fade .2s calc(1.4s + var(--n) * .22s) both; }
+  .fig .co .tag { transform-box: fill-box; transform-origin: center; animation: pop .4s calc(1.7s + var(--n) * .22s) both; }
+  .fig .tap { transform-box: fill-box; transform-origin: center; animation: tap 1.5s 3.4s ease-out 3; }
+  .fig figcaption { animation: fade .8s 3.2s both; }
+
+  /* phone call bar slides up */
+  .bar { animation: bar-up .5s .6s cubic-bezier(.2, .7, .2, 1) both; }
+
+  /* small touches */
+  .btn, nav.main a.cta { transition: background-color .2s, transform .2s; }
+  .btn:hover, nav.main a.cta:hover { transform: translateX(3px); }
+  .show img { transition: transform .35s cubic-bezier(.2, .7, .2, 1), border-color .35s; }
+  .show a:hover img { transform: translateY(-6px); border-color: var(--blue-l); }
+  .qs details[open] p { animation: open .35s ease-out both; }
+
+  /* everything further down eases up as it scrolls into view (browsers without this just show it) */
+  @supports (animation-timeline: view()) {
+    @keyframes enter { from { opacity: 0; transform: translateY(44px); } }
+    section h2, section .intro, section .k, .key li, .show a, .more, .steps li, section .ctas, .plan, .fine-print, .extras h3, .extras dl > div, .qs details,
+    .contact h2, .contact p, .contact .big, .contact .row, .dblock .shots, .dtext > * {
+      animation: enter ease-out both; animation-timeline: view(); animation-range: entry 0% entry 55%;
+    }
+    .show a:nth-child(2), .plan + .plan { animation-range: entry 8% entry 63%; }
+    .show a:nth-child(3) { animation-range: entry 16% entry 71%; }
+  }
 }

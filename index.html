@@ -63,51 +63,63 @@
             <polygon id="star" points="6,0 7.8,4.2 12,4.6 8.8,7.6 9.8,12 6,9.6 2.2,12 3.2,7.6 0,4.6 4.2,4.2"/>
           </defs>
 
-          <rect x="118" y="8" width="234" height="604" rx="30" fill="#f6f4ef" stroke="#ffffff" stroke-width="2"/>
+          <rect class="phone" x="118" y="8" width="234" height="604" rx="30" fill="#f6f4ef" stroke="#ffffff" stroke-width="2"/>
 
-          <rect x="134" y="30" width="202" height="26" fill="#e6e3da"/>
-          <text x="146" y="47.5" font-size="12" font-weight="600" fill="#121619">yourcompany.com</text>
-
-          <rect x="134" y="70" width="24" height="24" fill="#2450E8"/>
-          <text x="166" y="87.5" font-size="14" font-weight="800" fill="#121619" style="font-stretch:88%">YOUR COMPANY</text>
-
-          <text x="134" y="132" font-size="30" font-weight="850" fill="#121619" style="font-stretch:78%">HONEST WORK,</text>
-          <text x="134" y="160" font-size="30" font-weight="850" fill="#121619" style="font-stretch:78%">DONE RIGHT.</text>
-
-          <polygon points="146,178 336,178 324,224 134,224" fill="#2450E8"/>
-          <text x="235" y="207" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Call (555) 555-0123</text>
-
-          <text x="134" y="268" font-size="32" font-weight="850" fill="#121619" style="font-stretch:80%">5.0</text>
-          <g fill="#2450E8"><use href="#star" x="180" y="246"/><use href="#star" x="196" y="246"/><use href="#star" x="212" y="246"/><use href="#star" x="228" y="246"/><use href="#star" x="244" y="246"/></g>
-          <text x="180" y="279" font-size="11.5" fill="#5b6470">214 Google reviews</text>
-          <text x="134" y="304" font-size="12" fill="#3c444d">&#8220;Review text goes here, word</text>
-          <text x="134" y="320" font-size="12" fill="#3c444d">for word, from your listing.&#8221;</text>
-
-          <rect x="134" y="338" width="202" height="146" fill="url(#hatch)" stroke="#121619" stroke-width="1"/>
-          <rect x="164" y="396" width="142" height="30" fill="#f6f4ef"/>
-          <text x="235" y="415.5" font-size="11" font-weight="700" fill="#121619" text-anchor="middle" letter-spacing=".6">YOUR CREW. YOUR JOBS.</text>
-
-          <rect x="134" y="498" width="202" height="26" fill="#e6e3da"/>
-          <text x="146" y="515.5" font-size="12" font-weight="600" fill="#121619">CSLB License No. 000000</text>
-
-          <polygon points="145,558 268,558 257,602 134,602" fill="#2450E8"/>
-          <text x="201" y="585" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Call</text>
-          <rect x="268" y="558" width="68" height="44" fill="#121619"/>
-          <text x="302" y="585" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Text</text>
-
-          <g stroke="#7d9bff" stroke-width="1.5" fill="none">
-            <path d="M53 43 H126"/><path d="M53 201 H126"/><path d="M53 411 H126"/><path d="M53 580 H126"/>
-            <path d="M344 263 H417"/><path d="M344 511 H417"/>
+          <!-- the screen builds top to bottom (--i), then the six callouts come in by number (--n); site.css "motion" -->
+          <g class="b" style="--i:0">
+            <rect x="134" y="30" width="202" height="26" fill="#e6e3da"/>
+            <text x="146" y="47.5" font-size="12" font-weight="600" fill="#121619">yourcompany.com</text>
           </g>
-          <g fill="#7d9bff"><circle cx="128" cy="43" r="3.5"/><circle cx="128" cy="201" r="3.5"/><circle cx="128" cy="411" r="3.5"/><circle cx="128" cy="580" r="3.5"/><circle cx="342" cy="263" r="3.5"/><circle cx="342" cy="511" r="3.5"/></g>
-          <g fill="#2450E8" stroke="#ffffff" stroke-width="2">
-            <circle cx="40" cy="43" r="15"/><circle cx="40" cy="201" r="15"/><circle cx="40" cy="411" r="15"/><circle cx="40" cy="580" r="15"/>
-            <circle cx="430" cy="263" r="15"/><circle cx="430" cy="511" r="15"/>
+
+          <g class="b" style="--i:1">
+            <rect x="134" y="70" width="24" height="24" fill="#2450E8"/>
+            <text x="166" y="87.5" font-size="14" font-weight="800" fill="#121619" style="font-stretch:88%">YOUR COMPANY</text>
           </g>
-          <g fill="#ffffff" font-size="15" font-weight="800" text-anchor="middle">
-            <text x="40" y="48.5">6</text><text x="40" y="206.5">1</text><text x="40" y="416.5">3</text><text x="40" y="585.5">5</text>
-            <text x="430" y="268.5">2</text><text x="430" y="516.5">4</text>
+
+          <g class="b" style="--i:2">
+            <text x="134" y="132" font-size="30" font-weight="850" fill="#121619" style="font-stretch:78%">HONEST WORK,</text>
+            <text x="134" y="160" font-size="30" font-weight="850" fill="#121619" style="font-stretch:78%">DONE RIGHT.</text>
           </g>
+
+          <g class="b" style="--i:3">
+            <polygon class="tap" points="146,178 336,178 324,224 134,224" fill="none" stroke="#8aa4ff" stroke-width="2"/>
+            <polygon points="146,178 336,178 324,224 134,224" fill="#2450E8"/>
+            <text x="235" y="207" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Call (555) 555-0123</text>
+          </g>
+
+          <g class="b" style="--i:4">
+            <text x="134" y="268" font-size="32" font-weight="850" fill="#121619" style="font-stretch:80%">5.0</text>
+            <g fill="#2450E8"><g class="star" style="--s:0"><use href="#star" x="180" y="246"/></g><g class="star" style="--s:1"><use href="#star" x="196" y="246"/></g><g class="star" style="--s:2"><use href="#star" x="212" y="246"/></g><g class="star" style="--s:3"><use href="#star" x="228" y="246"/></g><g class="star" style="--s:4"><use href="#star" x="244" y="246"/></g></g>
+            <text x="180" y="279" font-size="11.5" fill="#5b6470">214 Google reviews</text>
+            <text x="134" y="304" font-size="12" fill="#3c444d">&#8220;Review text goes here, word</text>
+            <text x="134" y="320" font-size="12" fill="#3c444d">for word, from your listing.&#8221;</text>
+          </g>
+
+          <g class="b" style="--i:5">
+            <rect x="134" y="338" width="202" height="146" fill="url(#hatch)" stroke="#121619" stroke-width="1"/>
+            <rect x="164" y="396" width="142" height="30" fill="#f6f4ef"/>
+            <text x="235" y="415.5" font-size="11" font-weight="700" fill="#121619" text-anchor="middle" letter-spacing=".6">YOUR CREW. YOUR JOBS.</text>
+          </g>
+
+          <g class="b" style="--i:6">
+            <rect x="134" y="498" width="202" height="26" fill="#e6e3da"/>
+            <text x="146" y="515.5" font-size="12" font-weight="600" fill="#121619">CSLB License No. 000000</text>
+          </g>
+
+          <g class="b" style="--i:7">
+            <polygon points="145,558 268,558 257,602 134,602" fill="#2450E8"/>
+            <text x="201" y="585" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Call</text>
+            <rect x="268" y="558" width="68" height="44" fill="#121619"/>
+            <text x="302" y="585" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Text</text>
+          </g>
+
+          <!-- lines start at the phone and run out to the numbers -->
+          <g class="co" style="--n:1"><path d="M126 201 H53" pathLength="1"/><circle class="end" cx="128" cy="201" r="3.5"/><g class="tag"><circle cx="40" cy="201" r="15"/><text x="40" y="206.5">1</text></g></g>
+          <g class="co" style="--n:2"><path d="M344 263 H417" pathLength="1"/><circle class="end" cx="342" cy="263" r="3.5"/><g class="tag"><circle cx="430" cy="263" r="15"/><text x="430" y="268.5">2</text></g></g>
+          <g class="co" style="--n:3"><path d="M126 411 H53" pathLength="1"/><circle class="end" cx="128" cy="411" r="3.5"/><g class="tag"><circle cx="40" cy="411" r="15"/><text x="40" y="416.5">3</text></g></g>
+          <g class="co" style="--n:4"><path d="M344 511 H417" pathLength="1"/><circle class="end" cx="342" cy="511" r="3.5"/><g class="tag"><circle cx="430" cy="511" r="15"/><text x="430" y="516.5">4</text></g></g>
+          <g class="co" style="--n:5"><path d="M126 580 H53" pathLength="1"/><circle class="end" cx="128" cy="580" r="3.5"/><g class="tag"><circle cx="40" cy="580" r="15"/><text x="40" y="585.5">5</text></g></g>
+          <g class="co" style="--n:6"><path d="M126 43 H53" pathLength="1"/><circle class="end" cx="128" cy="43" r="3.5"/><g class="tag"><circle cx="40" cy="43" r="15"/><text x="40" y="48.5">6</text></g></g>
         </svg>
         <figcaption>The first screen of every Straightedge site. Name, number and license shown here are placeholders.</figcaption>
       </figure>
@@ -195,6 +207,23 @@
         </div>
       </div>
       <p class="fine-print">Larger changes, such as an additional page, are quoted before work begins.</p>
+
+      <div class="extras">
+        <h3 id="h-extras">Extras</h3>
+        <p class="intro">Optional. Add any of them to either plan, now or later.</p>
+        <dl>
+          <div><dt>Google Business Profile clean-up</dt><dd>Categories, service towns, hours and services set up correctly, with photographs of your real jobs.</dd><dd class="cost">$150–300</dd></div>
+          <div><dt>Logo clean-up</dt><dd>Your same logo, redrawn so it is sharp at any size, with files ready for trucks, shirts and signs.</dd><dd class="cost">$100–150</dd></div>
+          <div><dt>New logo</dt><dd>A refreshed or brand-new logo, only if you want one. Same set of files.</dd><dd class="cost">$300–600</dd></div>
+          <div><dt>Print designs</dt><dd>Business cards, yard signs, door hangers or truck magnets. I design them, you print them wherever you like.</dd><dd class="cost">$75–150 each</dd></div>
+          <div><dt>Review card</dt><dd>A card with a QR code, plus a link you can text, that takes customers straight to your Google review page. I design it, you print it.</dd><dd class="cost">$50</dd></div>
+          <div><dt>Spanish version</dt><dd>Every page of your site in Spanish, with a switch at the top.</dd><dd class="cost">$300–500</dd></div>
+          <div><dt>Estimate and invoice templates</dt><dd>Your logo and details on the quotes and invoices you already send.</dd><dd class="cost">$100</dd></div>
+          <div><dt>Managed Plus</dt><dd>Everything in Managed, plus the new job photographs you send me added to your site and your Google profile every month.</dd><dd class="cost">$125 per month</dd></div>
+          <div><dt>Brand kit</dt><dd>Logo clean-up, plus a business card, a yard sign and a truck magnet design.</dd><dd class="cost">$300</dd></div>
+        </dl>
+        <p class="fine-print">Ranges depend on how much there is to do. You get the exact price before work begins.</p>
+      </div>
     </div>
   </section>
 
@@ -206,7 +235,7 @@
         <details><summary>Will this put me first on Google?</summary><p>No one can promise that, and I won't. I promise a site that is fast, clear, accurate and easy to call from.</p></details>
         <details><summary>Do I own the site?</summary><p>Yes. The domain is registered in your name, and you own every word and photograph. On either plan you can ask for all the files whenever you want.</p></details>
         <details><summary>What if I want to leave?</summary><p>On Managed, cancel any time with 30 days' notice and I hand over all the files. On Own it, the site is already yours and hosted on your account.</p></details>
-        <details><summary>Do you replace my logo and colors?</summary><p>No. Your logo, your colors and anything that already works are kept. The rest is rebuilt.</p></details>
+        <details><summary>Do you replace my logo and colors?</summary><p>Not unless you ask. Your logo, your colors and anything that already works are kept. The rest is rebuilt. If you want a cleaner or new logo, that is an extra.</p></details>
         <details><summary>What do you need from me?</summary><p>Your photographs, your license number and the towns you serve. I collect your reviews from your public Google listing.</p></details>
         <details><summary>Why not hire an agency?</summary><p>With an agency you talk to an account manager. With me you talk to the person building your site, from the first call through launch and after. <a href="founder.html">About the founder.</a></p></details>
       </div>
