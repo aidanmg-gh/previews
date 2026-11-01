@@ -19,6 +19,7 @@
   --paper:#f2f4f6;
   --white:#fff;
   --wrap:1180px;
+  --ease:cubic-bezier(.2,.7,.1,1);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
@@ -49,7 +50,8 @@ p{margin:0 0 1em}
 .top-call:hover strong{text-decoration:underline}
 
 /* ---------- Menu (their dark navy bar) ---------- */
-.nav{background:var(--navy);position:relative;z-index:20}
+.nav{background:rgba(9,44,65,.96);-webkit-backdrop-filter:saturate(1.3) blur(10px);backdrop-filter:saturate(1.3) blur(10px);position:sticky;top:0;z-index:40;transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 10px 30px -14px rgba(0,0,0,.55)}
 .nav .wrap{display:flex;align-items:stretch;justify-content:space-between}
 .menu{display:flex;list-style:none;margin:0;padding:0}
 .menu>li{position:relative}
@@ -65,24 +67,37 @@ p{margin:0 0 1em}
 .mnav{display:none}
 
 /* ---------- Buttons: one system, everywhere ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border:2px solid var(--red-btn);background:var(--red-btn);color:#fff;text-decoration:none;font:800 15px/1 "Raleway",sans-serif;letter-spacing:.06em;text-transform:uppercase;border-radius:3px;cursor:pointer}
-.btn:hover{background:var(--red-btn-dk);border-color:var(--red-btn-dk)}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border:2px solid var(--red-btn);background:var(--red-btn);color:#fff;text-decoration:none;font:800 15px/1 "Raleway",sans-serif;letter-spacing:.06em;text-transform:uppercase;border-radius:3px;cursor:pointer;transition:background-color .2s,border-color .2s,box-shadow .25s,transform .1s}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .6s var(--ease)}
+.btn:hover::before{transform:translateX(120%)}
+.btn:active{transform:translateY(1px)}
+.btn:hover{background:var(--red-btn-dk);border-color:var(--red-btn-dk);box-shadow:0 10px 26px -8px rgba(212,42,34,.6)}
 .btn.ghost{background:transparent;border-color:rgba(255,255,255,.7)}
 .btn.ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
 .btn.blue{background:var(--blue);border-color:var(--blue)}
 .btn.blue:hover{background:#1f6299;border-color:#1f6299}
 .btn svg{width:18px;height:18px;flex:none}
 
-/* ---------- Hero (their blue gradient) ---------- */
-.hero{background:linear-gradient(100deg,var(--deep) 0%,#0a4c7c 45%,var(--teal) 100%);color:#fff}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding-top:56px;padding-bottom:60px}
-.hero h1{font:900 clamp(40px,4.3vw,58px)/1.02 "Raleway",sans-serif;text-transform:uppercase;letter-spacing:-.005em}
+/* ---------- Hero: their blue-to-teal gradient, now laid over their own van ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;background:var(--deep)}
+.hero-bg{position:absolute;top:0;right:0;bottom:0;width:64%}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:30% 50%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--deep) 0%,var(--deep) 36%,rgba(1,54,96,.86) 50%,rgba(3,80,130,.35) 72%,rgba(3,139,163,.12) 100%),linear-gradient(0deg,rgba(1,30,55,.55) 0%,transparent 30%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(55% 70% at 18% 40%,rgba(3,139,163,.28),transparent 70%)}
+.hero .wrap{position:relative;z-index:2;padding-top:52px;padding-bottom:128px}
+.hero-copy{max-width:720px}
+.kicker{display:inline-flex;align-items:center;gap:10px;margin:0 0 18px;padding:7px 14px;border-radius:40px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);font:700 12.5px/1 "Raleway",sans-serif;letter-spacing:.12em;text-transform:uppercase;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.kicker .dot{width:8px;height:8px;border-radius:50%;background:#3fd17a;box-shadow:0 0 0 0 rgba(63,209,122,.6);animation:ping 2.2s ease-out infinite}
+.hero h1{font:900 clamp(42px,4.6vw,64px)/.98 "Raleway",sans-serif;text-transform:uppercase;letter-spacing:-.01em;text-shadow:0 2px 18px rgba(0,0,0,.25)}
 .hero h1 span{display:block}
 .hero h1 .l2{color:var(--gold)}
+/* the water line under the headline: a pipe that fills once on load */
+.pipe{display:block;position:relative;width:min(380px,80%);height:6px;margin:24px 0 0;border-radius:6px;background:rgba(255,255,255,.14);overflow:hidden}
+.pipe i{position:absolute;inset:0;border-radius:6px;background:linear-gradient(90deg,#5cc4f0,#9fe3ff 50%,#5cc4f0);background-size:200% 100%;transform-origin:left;box-shadow:0 0 14px rgba(92,196,240,.7)}
 .lic-line{margin:16px 0 0;font:600 14px/1.4 "Open Sans",sans-serif;color:rgba(255,255,255,.88)}
 .lic-line a{color:#fff}
 /* the $50 coupon, rebuilt from their banner image */
-.coupon{display:flex;align-items:center;gap:18px;margin:26px 0 0;padding:14px 20px;background:#071d33;border:2px dashed rgba(255,182,46,.75);max-width:470px}
+.coupon{display:flex;align-items:center;gap:18px;margin:22px 0 0;padding:14px 20px;background:rgba(7,29,51,.82);border:2px dashed rgba(255,182,46,.75);max-width:470px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 18px 40px -20px rgba(0,0,0,.6)}
 .coupon .amt{font:900 italic 46px/0.9 "Raleway",sans-serif;color:var(--gold);white-space:nowrap}
 .coupon .amt small{display:block;font-size:26px;letter-spacing:.04em}
 .coupon p{margin:0;font:600 17px/1.3 "Open Sans",sans-serif;color:#7cc5f2}
@@ -92,13 +107,24 @@ p{margin:0 0 1em}
 .checks li{position:relative;padding-left:30px;font:600 16.5px/1.4 "Open Sans",sans-serif}
 .checks li::before{content:"";position:absolute;left:2px;top:3px;width:8px;height:14px;border:solid var(--gold);border-width:0 3px 3px 0;transform:rotate(45deg)}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.hero-photo{position:relative}
-.hero-photo img{width:100%;aspect-ratio:1200/667;object-fit:cover;border:6px solid #fff;box-shadow:0 18px 40px rgba(0,0,0,.28)}
-.rating{display:flex;align-items:center;gap:14px;margin-top:18px;color:#fff;text-decoration:none}
-.rating .num{font:900 34px/1 "Raleway",sans-serif}
+.hero .btn.ghost{background:rgba(255,255,255,.06);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.rating{display:inline-flex;align-items:center;gap:.6em;margin-top:24px;padding:9px 16px;border-radius:40px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;text-decoration:none;font:600 14px/1 "Open Sans",sans-serif}
+.rating:hover{text-decoration:underline}
 .stars{color:var(--gold);font-size:20px;letter-spacing:2px;line-height:1}
-.rating small{display:block;font:600 14px/1.3 "Open Sans",sans-serif;opacity:.9}
-.rating:hover small{text-decoration:underline}
+.rating .stars{font-size:15px}
+
+/* trust strip, floating over the bottom of the hero */
+.trust{position:relative;z-index:3;margin-top:-62px}
+.trust ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;background:#fff;border-top:4px solid var(--red-btn);box-shadow:0 26px 60px -24px rgba(1,30,55,.55)}
+.trust li{display:flex;gap:14px;align-items:center;padding:22px 22px;border-left:1px solid var(--line)}
+.trust li:first-child{border-left:0;background:var(--navy-2);color:#fff}
+.trust svg{width:26px;height:26px;flex:none;color:var(--blue)}
+.trust li:first-child svg{color:var(--gold)}
+.trust b{display:block;font:800 11.5px/1.3 "Raleway",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.trust li:first-child b{color:#9cc8ea}
+.trust a,.trust span{display:block;color:var(--ink);font:600 15px/1.35 "Open Sans",sans-serif;text-decoration:none}
+.trust a.big{color:var(--gold);font:900 22px/1.1 "Raleway",sans-serif}
+.trust a:hover{text-decoration:underline}
 
 /* ---------- Section heads (their Alegreya serif, blue keyword) ---------- */
 .sec{padding:76px 0}
@@ -119,8 +145,11 @@ p{margin:0 0 1em}
 
 /* services: real photos, same button on every card */
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
-.svc article{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
-.svc img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.svc article{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden;transition:box-shadow .35s,border-color .35s}
+.svc article:hover{box-shadow:0 26px 50px -28px rgba(1,30,55,.45);border-color:#c9d3dd}
+.svc img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.svc article:hover img{transform:scale(1.05)}
+.svc .body{position:relative;background:#fff;border-top:3px solid var(--blue)}
 .svc .body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
 .svc h3{font:700 23px/1.2 "Alegreya",Georgia,serif;color:#222}
 .svc p{color:var(--muted);font-size:15.5px;margin:10px 0 18px;flex:1}
@@ -157,12 +186,20 @@ form.rq{padding:18px 26px 28px;display:grid;gap:12px}
 .adv .checks li{color:var(--ink);font-weight:600}
 .adv .checks li::before{border-color:var(--blue)}
 
-/* gallery */
+/* gallery: one big photo, the rest square, captions on hover */
 .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:36px}
-.gal img{width:100%;aspect-ratio:1;object-fit:cover}
+.gal figure{margin:0;position:relative;overflow:hidden;aspect-ratio:1;background:#dfe3e8}
+.gal .big{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;background:linear-gradient(transparent,rgba(1,30,55,.85));color:#fff;font:600 13px/1.3 "Open Sans",sans-serif;transition:padding .4s var(--ease)}
+.gal figure:hover figcaption{padding-bottom:16px}
 
-/* emergency band */
-.band{background:var(--navy-2);color:#fff;text-align:center;padding:56px 0}
+/* emergency band, with slow water along the top edge */
+.band{position:relative;background:var(--navy-2);color:#fff;text-align:center;padding:84px 0 60px;overflow:hidden;background-image:radial-gradient(50% 80% at 50% 100%,rgba(92,196,240,.16),transparent 70%)}
+.waves{position:absolute;left:0;top:-1px;width:200%;height:46px;transform:scaleY(-1)}
+.waves path{fill:var(--paper)}
+.waves .w2{opacity:.45}
 .band p{margin:0 0 6px;font:600 17px/1.4 "Open Sans",sans-serif;opacity:.9}
 .band h2{font:900 clamp(24px,3vw,34px)/1.15 "Raleway",sans-serif;text-transform:uppercase}
 .band h2 span{color:#5cc4f0}
@@ -283,3 +320,77 @@ form.rq{padding:18px 26px 28px;display:grid;gap:12px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .lic-line a{white-space:nowrap}
 .doc .crumbs a{color:var(--blue)}
+
+/* ---------- premium pass (Oct 31): hero over the van, trust strip, motion ---------- */
+@media (max-width:960px){
+  .hero .wrap{padding-top:56px;padding-bottom:132px}
+  .hero-bg{width:78%}
+  .trust ul{grid-template-columns:1fr 1fr}
+  .trust li:first-child{grid-column:1/-1}
+  .trust li{border-top:1px solid var(--line)}
+  .trust li:nth-child(2){border-left:0;border-top:0}
+  .trust li:nth-child(3){border-top:0}
+  .trust li:nth-child(4){border-left:0}
+}
+/* On a phone the van sits under the words, in full view, and the trust strip lands on it. */
+@media (max-width:700px){
+  .hero-bg{top:auto;width:100%;height:300px}
+  .hero-bg img{object-position:40% 60%}
+  .hero::before{background:linear-gradient(180deg,var(--deep) 0%,var(--deep) calc(100% - 330px),rgba(1,54,96,.55) calc(100% - 200px),rgba(1,54,96,.1) calc(100% - 90px),rgba(1,30,55,.35) 100%)}
+  .hero::after{background:radial-gradient(90% 40% at 20% 20%,rgba(3,139,163,.3),transparent 70%)}
+  .hero .wrap{padding-top:30px;padding-bottom:260px}
+  .kicker{font-size:11px;margin-bottom:14px}
+  .hero h1{font-size:clamp(38px,11vw,46px)}
+  .pipe{margin-top:18px}
+  .trust{margin-top:-44px}
+  .trust ul{grid-template-columns:1fr}
+  .trust li,.trust li:nth-child(n){grid-column:auto;border-left:0;border-top:1px solid var(--line);padding:12px 16px}
+  .trust li:first-child{border-top:0;padding:16px}
+  .trust b{display:inline;margin-right:8px}
+  .trust li:not(:first-child) div{display:flex;flex-wrap:wrap;align-items:baseline}
+  .trust svg{width:22px;height:22px}
+  .trust a.big{font-size:20px}
+  .trust a,.trust span{font-size:14px}
+  .gal{grid-template-columns:1fr 1fr;gap:6px}
+  .gal .big{grid-column:span 2;grid-row:auto;aspect-ratio:4/3}
+  .gal figcaption{font-size:12px;padding:20px 10px 8px}
+  .band{padding:70px 0 50px}
+}
+
+/* Motion: one moment on load (the headline rises, the water line fills), sections rise in as
+   they arrive, slow water on the emergency band. Reduced motion turns it all off. */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes flow{from{background-position:200% 0}to{background-position:0 0}}
+@keyframes push{from{transform:scale(1.08)}to{transform:scale(1)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(63,209,122,.6)}80%,100%{box-shadow:0 0 0 10px rgba(63,209,122,0)}}
+@keyframes drift{from{transform:scaleY(-1) translateX(0)}to{transform:scaleY(-1) translateX(-50%)}}
+.hero-bg img{animation:push 2.4s var(--ease) both}
+.kicker{animation:rise .6s .1s var(--ease) both}
+.hero h1 .l1{animation:rise .7s .2s var(--ease) both}
+.hero h1 .l2{animation:rise .7s .38s var(--ease) both}
+.pipe i{animation:fill 1s .7s var(--ease) both,flow 2.4s 1.7s linear infinite}
+.lic-line{animation:rise .6s .95s var(--ease) both}
+.coupon{animation:rise .6s 1.05s var(--ease) both}
+.hero .checks{animation:rise .6s 1.15s var(--ease) both}
+.hero-btns{animation:rise .6s 1.25s var(--ease) both}
+.rating{animation:rise .6s 1.35s var(--ease) both}
+.waves{animation:drift 14s linear infinite}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease) var(--d,0ms),transform .7s var(--ease) var(--d,0ms)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reviews .stars{clip-path:inset(0 100% 0 0);transition:clip-path 1s .2s var(--ease)}
+.js .reviews .in .stars,.js .reviews .wrap.in .stars{clip-path:inset(0 0 0 0)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  .js .reviews .stars{clip-path:none}
+}
+
+/* ---------- preview watermark ----------
+   This copy is a sales preview, not their site. The tiled mark sits over everything (clicks pass
+   through it) and the tag says whose work it is. Comes off when they pay and it goes live. */
+.wm{position:fixed;inset:0;z-index:90;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='620' height='380'%3E%3Ctext x='310' y='190' text-anchor='middle' transform='rotate(-24 310 190)' font-family='Arial,sans-serif' font-size='18' font-weight='700' fill='rgb(128,128,128)' fill-opacity='.07'%3EPREVIEW %C2%B7 STRAIGHTEDGE WEB%3C/text%3E%3C/svg%3E") 0 0/620px 380px}
+.wm-tag{position:fixed;right:16px;bottom:16px;z-index:91;background:#2450e8;color:#fff;font:600 13px/1 "Open Sans",sans-serif;padding:10px 14px;border-radius:3px;text-decoration:none;box-shadow:0 8px 24px -8px rgba(0,0,0,.45)}
+.wm-tag:hover{background:#1b3fc0}
+@media (max-width:640px){.wm-tag{right:auto;left:50%;transform:translateX(-50%);bottom:calc(68px + env(safe-area-inset-bottom));white-space:nowrap}}
+@media print{.wm{position:absolute}}

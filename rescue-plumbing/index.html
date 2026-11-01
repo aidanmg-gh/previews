@@ -8,7 +8,8 @@
 <meta name="description" content="24-hour plumber in Van Nuys. Sewer and drain cleaning, water heaters, leaks. $50 off sewer or drain cleaning for first-time customers. Call (818) 510-1204.">
 <link rel="preload" href="fonts/raleway.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/open-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/van-760.webp" imagesrcset="img/van-760.webp 760w, img/van-1200.webp 1200w" imagesizes="(max-width: 960px) 100vw, 560px" fetchpriority="high">
+<link rel="preload" as="image" href="img/van-760.webp" media="(max-width:700px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/van-1200.webp" media="(min-width:701px)" fetchpriority="high">
 <link rel="stylesheet" href="css/site.css">
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -59,9 +60,15 @@
 
 <main id="main">
   <section class="hero" aria-labelledby="hero-h">
+    <picture class="hero-bg">
+      <source media="(max-width:700px)" srcset="img/van-760.webp" width="760" height="422">
+      <img src="img/van-1200.webp" width="1200" height="667" alt="The red, white and blue 24/7 Rescue Plumbing Services van parked on a street" fetchpriority="high">
+    </picture>
     <div class="wrap">
-      <div>
-        <h1 id="hero-h"><span>Emergency call?</span><span class="l2">We respond fast.</span></h1>
+      <div class="hero-copy">
+        <p class="kicker"><span class="dot" aria-hidden="true"></span>Open now &middot; 24 hours, 7 days</p>
+        <h1 id="hero-h"><span class="l1">Emergency call?</span><span class="l2">We respond fast.</span></h1>
+        <span class="pipe" aria-hidden="true"><i></i></span>
         <p class="lic-line">24-hour plumber in Van Nuys &middot; <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1061690">CSLB Lic. #1061690 (C-36)</a></p>
         <div class="coupon">
           <div class="amt">$50<small>OFF</small></div>
@@ -76,16 +83,21 @@
           <a class="btn" href="tel:+18185101204"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg> Call (818) 510-1204</a>
           <a class="btn ghost" href="#request">Request an Appointment</a>
         </div>
-      </div>
-      <div class="hero-photo">
-        <img src="img/van-760.webp" srcset="img/van-760.webp 760w, img/van-1200.webp 1200w" sizes="(max-width: 960px) 100vw, 560px" width="1200" height="667" alt="The red, white and blue 24/7 Rescue Plumbing Services van parked on a street" fetchpriority="high">
-        <a class="rating" href="https://www.google.com/maps/search/?api=1&amp;query=24%2F7%20Rescue%20Plumbing%20Services%20inc&amp;query_place_id=ChIJI8jLugmXwoARF66cEXETyn0" rel="noopener" target="_blank">
-          <span class="num">4.9</span>
-          <span><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>117 reviews on Google</small></span>
-        </a>
+        <a class="rating" href="https://www.google.com/maps/search/?api=1&amp;query=24%2F7%20Rescue%20Plumbing%20Services%20inc&amp;query_place_id=ChIJI8jLugmXwoARF66cEXETyn0" rel="noopener" target="_blank"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.9 on Google &middot; 117 reviews</a>
       </div>
     </div>
   </section>
+
+  <div class="trust">
+    <div class="wrap">
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><div><b>24/7 emergency line</b><a class="big" href="tel:+18185101204">(818) 510-1204</a></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><div><b>Licensed plumber</b><a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1061690">CSLB #1061690 (C-36)</a></div></li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg><div><b>4.9 on Google</b><span>117 reviews</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5" fill="currentColor"/></svg><div><b>Flat-rate pricing</b><span>Price first, no overtime</span></div></li>
+      </ul>
+    </div>
+  </div>
 
   <section class="sec" id="about" aria-labelledby="about-h">
     <div class="wrap experts">
@@ -138,7 +150,7 @@
 
   <section class="reviews" aria-labelledby="rev-h">
     <div class="wrap">
-      <div class="score">4.9</div>
+      <div class="score" data-to="4.9">4.9</div>
       <div>
         <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <h2 id="rev-h">Rated 4.9 out of 5 on Google, from 117 reviews</h2>
@@ -185,19 +197,21 @@
       <h2 class="h2" id="gal-h">Our <em>Work</em></h2>
       <p class="lede">Photos from our own jobs.</p>
       <div class="gal">
-        <img src="img/job-013-sq.webp" width="400" height="400" alt="Testing the controls on a new tankless water heater" loading="lazy">
-        <img src="img/job-003-sq.webp" width="400" height="400" alt="A tankless water heater on an outside wall" loading="lazy">
-        <img src="img/job-011-sq.webp" width="400" height="400" alt="A trench dug down to a sewer line" loading="lazy">
-        <img src="img/job-004-sq.webp" width="400" height="400" alt="Two tank water heaters side by side" loading="lazy">
-        <img src="img/job-010-sq.webp" width="400" height="400" alt="New copper water lines inside an open wall" loading="lazy">
-        <img src="img/job-005-sq.webp" width="400" height="400" alt="Flushing out a dug-up sewer line" loading="lazy">
-        <img src="img/job-012-sq.webp" width="400" height="400" alt="A whole-house water filter installed outside" loading="lazy">
-        <img src="img/job-001-sq.webp" width="400" height="400" alt="Two tankless heaters on a garage wall" loading="lazy">
+        <figure class="big"><img src="img/job-013.webp" width="720" height="540" alt="Testing the controls on a new tankless water heater" loading="lazy"><figcaption>Tankless water heater, start-up check</figcaption></figure>
+        <figure><img src="img/job-003-sq.webp" width="400" height="400" alt="A tankless water heater on an outside wall" loading="lazy"><figcaption>Tankless, outside wall</figcaption></figure>
+        <figure><img src="img/job-011-sq.webp" width="400" height="400" alt="A trench dug down to a sewer line" loading="lazy"><figcaption>Sewer line repair</figcaption></figure>
+        <figure><img src="img/job-004-sq.webp" width="400" height="400" alt="Two tank water heaters side by side" loading="lazy"><figcaption>Twin tank heaters</figcaption></figure>
+        <figure><img src="img/job-010-sq.webp" width="400" height="400" alt="New copper water lines inside an open wall" loading="lazy"><figcaption>New copper lines</figcaption></figure>
+        <figure><img src="img/job-005-sq.webp" width="400" height="400" alt="Flushing out a dug-up sewer line" loading="lazy"><figcaption>Sewer line flush</figcaption></figure>
+        <figure><img src="img/job-012-sq.webp" width="400" height="400" alt="A whole-house water filter installed outside" loading="lazy"><figcaption>Whole-house filter</figcaption></figure>
+        <figure><img src="img/job-001-sq.webp" width="400" height="400" alt="Two tankless heaters on a garage wall" loading="lazy"><figcaption>Two tankless heaters</figcaption></figure>
+        <figure><img src="img/job-006-sq.webp" width="400" height="400" alt="New piping and a valve on an outside wall" loading="lazy"><figcaption>New piping and valve</figcaption></figure>
       </div>
     </div>
   </section>
 
   <section class="band" aria-labelledby="band-h">
+    <svg class="waves" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path class="w1" d="M0 30c120 18 240 18 360 0s240-18 360 0 240 18 360 0 240-18 360 0v30H0z"/><path class="w2" d="M0 36c120-14 240-14 360 0s240 14 360 0 240-14 360 0 240 14 360 0v24H0z"/></svg>
     <div class="wrap">
       <p>Have a plumbing emergency? Call our 24-hour line.</p>
       <h2 id="band-h">Quick, reliable repair of <span>emergency leaks &amp; burst pipes</span></h2>
@@ -241,8 +255,8 @@
   </div>
 </footer>
 <div class="callbar"><a href="tel:+18185101204"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg> Call (818) 510-1204</a></div>
-<script>
-document.querySelectorAll('form.rq').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var p=f.querySelector('.done');if(p){p.hidden=false;p.focus();}});});
-</script>
+<script src="js/site.js" defer></script>
+<div class="wm" aria-hidden="true"></div>
+<a class="wm-tag" href="https://straightedgeweb.com">Preview by Straightedge Web</a>
 </body>
 </html>
