@@ -33,7 +33,8 @@ p{margin:0 0 1em}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* buttons: their red and yellow buttons with the black bolt on the left */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 24px 10px 58px;font-family:var(--head);font-weight:700;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:1px solid #000;line-height:1.15;text-align:center;background-repeat:no-repeat;background-position:10px center;background-size:38px 38px;background-image:url(../img/bolt.webp)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 24px 10px 58px;font-family:var(--head);font-weight:700;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:1px solid #000;line-height:1.15;text-align:center;position:relative}
+.btn::before{content:"";position:absolute;left:10px;top:50%;width:38px;height:38px;margin-top:-19px;background:url(../img/bolt.webp) center/contain no-repeat}
 .btn-red{background-color:var(--red);color:#fff}
 .btn-red:hover{background-color:var(--red-dk)}
 .btn-yellow{background-color:var(--yellow);color:#000}
@@ -55,7 +56,7 @@ p{margin:0 0 1em}
 }
 
 /* header: the logo shown big and sharp, their menu in the same order */
-.head{background:#fff;border-bottom:1px solid var(--line);position:relative;z-index:50}
+.head{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .head .wrap{display:flex;align-items:center;gap:20px;min-height:132px}
 .logo{flex:none;display:block}
 .logo img{width:186px;height:124px}
@@ -81,8 +82,8 @@ p{margin:0 0 1em}
 }
 @media (max-width:1020px){
   .nav,.head .tel .num{display:none}
-  .head .wrap{min-height:118px;gap:10px}
-  .logo img{width:162px;height:108px}
+  .head .wrap{min-height:110px;gap:10px}
+  .logo img{width:156px;height:104px}
   .head .tel{margin-left:auto;width:58px;height:58px;padding:0;justify-content:center;flex-direction:column;gap:2px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
   .head .tel svg{width:22px;height:22px}
   .head .tel .w{display:block}
@@ -103,7 +104,7 @@ p{margin:0 0 1em}
 }
 @media (max-width:400px){
   .logo img{width:150px;height:100px}
-  .head .wrap{min-height:112px}
+  .head .wrap{min-height:106px}
 }
 
 /* slanted edge, the same shape their sections end on */
@@ -115,7 +116,7 @@ p{margin:0 0 1em}
 .hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
 .hero picture,.hero picture img{display:block;width:100%}
 .hero picture img{height:min(640px,46vw);min-height:520px;object-fit:cover;object-position:center 40%}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,28,52,.25) 0%,rgba(18,28,52,.62) 45%,rgba(18,28,52,.8) 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(16,26,48,.6)}
 .hero .inner{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 16px 90px}
 .hero h1{color:#fff;margin:0;text-shadow:0 .08em .3em rgba(0,0,0,.45)}
 .hero h1 .nm{display:block;font-size:clamp(3rem,7.4vw,6.4rem);letter-spacing:.03em;text-transform:uppercase;line-height:1}
@@ -184,20 +185,23 @@ p{margin:0 0 1em}
 .grid6 img{width:100%;aspect-ratio:1;object-fit:cover}
 @media (max-width:900px){.grid6{grid-template-columns:repeat(3,1fr)}}
 
-/* reviews on their grey band */
-.reviews{background:var(--grey);padding:70px 0 120px}
-.reviews h2{text-align:center}
-.reviews .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:30px 0 40px;align-items:start}
-.reviews blockquote{margin:0;background:#fff;padding:30px 28px 24px;box-shadow:0 20px 40px -26px rgba(0,0,0,.3);font-size:1rem;line-height:1.7}
-.reviews blockquote p{margin:0 0 14px}
-.reviews blockquote footer{font-family:var(--head);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.85rem;color:var(--blue)}
-.reviews .more{text-align:center}
-@media (max-width:900px){.reviews .grid{grid-template-columns:1fr}.reviews{padding:52px 0 96px}}
+/* reviews on their grey band: one big quote, two beside it */
+.reviews{background:var(--grey);padding:96px 0 120px}
+.reviews h2{margin-bottom:36px}
+.reviews .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:28px 56px;align-items:start;margin:0 0 44px}
+.reviews blockquote{margin:0}
+.reviews blockquote p{margin:0 0 16px}
+.reviews blockquote footer{font-family:var(--head);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;color:var(--blue)}
+.reviews .lead{grid-row:span 2;font-family:var(--head);font-weight:600;font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.45;color:var(--ink);padding-left:28px;border-left:4px solid var(--red)}
+.reviews .lead::before{content:"\201C";display:block;font-size:4.5rem;line-height:.7;color:var(--red);margin-bottom:6px}
+.reviews .side{font-size:1.02rem;line-height:1.7;padding:0 0 26px;border-bottom:1px solid #c9c6c1}
+.reviews .side:last-child{border-bottom:0}
+@media (max-width:900px){.reviews .grid{grid-template-columns:1fr}.reviews{padding:64px 0 96px}.reviews .lead{grid-row:auto;padding-left:20px}}
 
 /* energy band: their FREE consultation line over their own job photo */
 .band{position:relative;color:#fff;overflow:hidden;background:var(--navy)}
 .band picture img{width:100%;height:clamp(460px,44vw,620px);object-fit:cover}
-.band::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(70deg,rgba(18,28,52,.9) 0%,rgba(18,28,52,.62) 55%,rgba(18,28,52,.2) 100%)}
+.band::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(16,26,48,.66)}
 .band .inner{position:absolute;inset:0;z-index:3;display:flex;align-items:center}
 .band h2{color:#fff;font-size:clamp(1.6rem,3.6vw,2.6rem);max-width:22ch;line-height:1.25}
 .band p{font-family:var(--head);font-weight:700;font-size:1.2rem;color:#fff;max-width:40ch}
@@ -233,7 +237,7 @@ form.quote.done .thanks{display:block}
 /* inner pages */
 .phead{position:relative;color:#fff;background:var(--navy);overflow:hidden}
 .phead picture img{width:100%;height:clamp(380px,36vw,500px);object-fit:cover}
-.phead::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,28,52,.35),rgba(18,28,52,.78))}
+.phead::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(16,26,48,.58)}
 .phead .inner{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px 16px 70px}
 .phead h1{color:#fff;font-size:clamp(2rem,5vw,3.6rem);text-transform:uppercase;letter-spacing:.03em;margin:0;text-shadow:0 .08em .3em rgba(0,0,0,.4)}
 .phead .sub{font-family:var(--head);font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin:14px 0 22px;font-size:1.05rem}
@@ -314,24 +318,122 @@ form.quote.done .thanks{display:block}
   .callbar .e{background:var(--yellow);color:#000}
 }
 
+/* ---------- premium pass (Nov 5) ---------- */
+.topbar .mid{font-size:.8rem;color:var(--ink);letter-spacing:.08em}
+@media (max-width:1020px){.topbar .mid{display:none}}
+
+/* trust strip right under the hero: only facts from their own site and CSLB */
+.trust{border-bottom:1px solid var(--line);background:#fff}
+.trust ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.trust li{padding:22px 22px 20px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.trust li:first-child{border-left:0;padding-left:0}
+.trust b{font-family:var(--head);font-weight:700;font-size:1.22rem;color:var(--navy);line-height:1.2}
+.trust span{font-size:.92rem;color:var(--text)}
+.trust a{color:inherit;text-decoration:none}
+.trust a:hover b{color:var(--red)}
+@media (max-width:860px){
+  .trust ul{grid-template-columns:1fr 1fr}
+  .trust li{padding:16px 0 14px 16px}
+  .trust li:nth-child(odd){border-left:0;padding-left:0}
+  .trust li:nth-child(n+3){border-top:1px solid var(--line)}
+  .trust b{font-size:1.06rem}
+}
+
+/* why LMS: text beside one big photo and two smaller ones */
+.why{padding:104px 0 96px}
+.why h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+.why .lede{font-size:1.1rem;line-height:1.75;max-width:56ch}
+.why .pics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.why .pics img:first-child{grid-column:1/-1;aspect-ratio:900/488}
+.why .pics img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.why .rule{display:block;width:84px;height:4px;background:var(--red);margin:0 0 26px}
+@media (max-width:860px){.why{padding:64px 0 56px}}
+
+/* photo cards: image zooms inside its frame, a yellow line draws under the title */
+.box .im{overflow:hidden;aspect-ratio:3/2}
+.box .im img{height:100%;aspect-ratio:auto}
+.box h3{position:relative;padding-bottom:10px}
+.box h3::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--yellow);transform:scaleX(.18);transform-origin:left}
+.box .go{border-bottom:0}
+@media (max-width:560px){.box .im{aspect-ratio:16/8}}
+
+/* FAQ: built only from what their own site says */
+.faq{padding:96px 0}
+.faq .split{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.faq h2{font-size:clamp(1.8rem,3.8vw,2.6rem)}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-family:var(--head);font-weight:700;font-size:1.12rem;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:12px;height:12px;border-right:2px solid var(--red);border-bottom:2px solid var(--red);rotate:45deg;translate:0 -3px;transition:rotate .25s}
+.faq details[open] summary::after{rotate:225deg;translate:0 3px}
+.faq details p{margin:0 0 22px;max-width:62ch}
+@media (max-width:860px){.faq{padding:64px 0}.faq .split{grid-template-columns:1fr;gap:20px}}
+
+/* closing band before the footer */
+.closer{background:var(--red);color:#fff;padding:56px 0}
+.closer .wrap{display:flex;gap:20px 40px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.closer h2{color:#fff;margin:0;font-size:clamp(1.6rem,3.6vw,2.4rem);text-transform:uppercase;letter-spacing:.03em}
+.closer p{margin:6px 0 0;font-size:1.05rem}
+.closer p a{color:#fff;font-weight:700}
+.closer .cta{display:flex;gap:12px;flex-wrap:wrap}
+.closer .btn-navy{background-color:var(--navy);color:#fff}
+.closer .btn-navy:hover{background-color:#14233f}
+@media (max-width:620px){.closer .cta,.closer .cta .btn{width:100%}}
+
+/* more room between sections */
+.boxes{padding-bottom:96px}
+.serve{padding:24px 0 88px}
+.work{padding:0 0 96px}
+.contact{padding:96px 0}
+@media (max-width:860px){.boxes{padding-bottom:64px}.serve{padding:8px 0 56px}.work{padding-bottom:64px}.contact{padding:64px 0}}
+
 /* ---------- motion ----------
-   Same idea as the other upgrades: the top of the page plays in on load, sections rise as they scroll in,
-   boxes and buttons lift on hover. CSS only. Off for anyone who has asked their device for less motion. */
-@keyframes se-rise{from{opacity:0;translate:0 18px}to{opacity:1;translate:none}}
-@keyframes se-push{from{scale:1.08}to{scale:none}}
+   CSS only, all inside prefers-reduced-motion: no-preference. The hero photo settles, the name, line, promise and
+   buttons rise in turn, the trust strip follows, and the bolts on the first two buttons flicker once like a light
+   coming on (the LMS signature). Sections rise as they scroll in (browsers without scroll timelines just show them).
+   Photo cards zoom and draw their yellow line on hover. The phone call bar slides up; the header picks up a shadow
+   once you scroll. Only transform and opacity move, so nothing shifts the layout. */
+@keyframes se-rise{from{opacity:.01;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes se-up{from{transform:translateY(34px)}to{transform:none}}
+@keyframes se-settle{from{transform:scale(1.06)}to{transform:none}}
+@keyframes se-fade{from{opacity:.01}to{opacity:1}}
+@keyframes se-bar{from{transform:translateY(100%)}to{transform:none}}
+@keyframes se-draw{from{transform:scaleX(0)}to{transform:none}}
+@keyframes se-flicker{0%,100%{opacity:1;filter:none}8%{opacity:.15}14%{opacity:1;filter:drop-shadow(0 0 6px #fff452)}22%{opacity:.3}30%{opacity:1;filter:drop-shadow(0 0 10px #fff452)}60%{filter:drop-shadow(0 0 4px #fff452)}}
+@keyframes se-shadow{from{box-shadow:0 0 0 rgba(0,0,0,0)}to{box-shadow:0 10px 26px -18px rgba(0,0,0,.45)}}
 @media (prefers-reduced-motion:no-preference){
-  .hero picture img,.phead picture img{animation:se-push 2.6s 0s cubic-bezier(.2,.7,.2,1) both}
-  .hero h1 .nm,.phead h1{animation:se-rise .7s .1s cubic-bezier(.2,.7,.2,1) both}
-  .hero h1 .ln,.phead .sub{animation:se-rise .7s .28s cubic-bezier(.2,.7,.2,1) both}
-  .hero .promise{animation:se-rise .6s .45s cubic-bezier(.2,.7,.2,1) both}
-  .hero .cta,.phead .cta{animation:se-rise .6s .6s cubic-bezier(.2,.7,.2,1) both}
-  .hero .emerg{animation:se-rise .6s .75s cubic-bezier(.2,.7,.2,1) both}
+  .hero picture img,.phead picture img{animation:se-settle 1.6s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1 .nm,.phead h1{animation:se-rise .8s .15s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1 .ln,.phead .sub{animation:se-rise .8s .3s cubic-bezier(.2,.7,.2,1) both}
+  .hero .promise{animation:se-rise .7s .45s cubic-bezier(.2,.7,.2,1) both}
+  .hero .cta,.phead .cta{animation:se-rise .7s .58s cubic-bezier(.2,.7,.2,1) both}
+  .hero .emerg{animation:se-fade .7s .8s both}
+  .hero .cta .btn::before,.phead .cta .btn::before{animation:se-flicker .9s 1.25s linear both}
+  .hero .cta .btn+.btn::before,.phead .cta .btn+.btn::before{animation-delay:1.4s}
+  .trust li{animation:se-rise .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(.75s + var(--i,0) * .1s)}
+  .callbar{animation:se-bar .5s .9s cubic-bezier(.2,.7,.2,1) both}
   .btn{transition:transform .2s,box-shadow .2s,background-color .2s}
   .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px -10px rgba(0,0,0,.45)}
-  .box{transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
-  .box:hover{transform:translateY(-5px);box-shadow:0 46px 60px -30px rgba(0,0,0,.45)}
+  .box{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+  .box:hover{transform:translateY(-4px);box-shadow:0 46px 60px -30px rgba(0,0,0,.45)}
+  .box .im img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .box:hover .im img{transform:scale(1.06)}
+  .box h3::after{transition:transform .45s cubic-bezier(.7,0,.2,1)}
+  .box:hover h3::after,.box:focus-visible h3::after{transform:none}
+  .grid6 img,.gallery .grid img,.why .pics img{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+  .faq details[open] p{animation:se-rise .35s ease-out both}
+  @supports (animation-timeline:scroll()){
+    .head{animation:se-shadow linear both;animation-timeline:scroll(root);animation-range:0 140px}
+  }
   @supports (animation-timeline:view()){
-    .why .split>*,.boxes .box,.serve .split>*,.grid6>*,.reviews blockquote,.contact .split>*,.svc>div,.gallery .grid>*,.why-list li{animation:se-rise linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+    /* text only slides (never fades, so it is always readable); photos fade and slide */
+    .why h2,.why h3,.boxes .box,.serve h2,.navybox,.clients,.work .hd,.reviews h2,.reviews blockquote,.band h2,.faq h2,.faq details,.contact h2,.contact form,.closer .wrap>*,.svc>div,.why-list li,.prose h2{animation:se-up linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+    .why .pics,.grid6>*,.gallery .grid>*,.prose .ph{animation:se-rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+    .why .rule{transform-origin:left;animation:se-draw linear both;animation-timeline:view();animation-range:entry 10% entry 60%}
+    .boxes .box:nth-child(2),.grid6>:nth-child(2),.gallery .grid>:nth-child(2){animation-range:entry 6% entry 61%}
+    .boxes .box:nth-child(3),.grid6>:nth-child(3),.gallery .grid>:nth-child(3){animation-range:entry 12% entry 67%}
+    .boxes .box:nth-child(4),.grid6>:nth-child(4){animation-range:entry 18% entry 73%}
   }
 }
 
@@ -347,3 +449,6 @@ form.quote.done .thanks{display:block}
 .ticks.big li{padding-bottom:12px;scroll-margin-top:20px}
 .nw{white-space:nowrap}
 .foot h2:not(:first-child){margin-top:1.5em}
+.trust a{display:flex;flex-direction:column;gap:2px}
+form.quote .fine a{color:var(--red-dk)}
+.serve .coupon a{text-decoration:underline;text-underline-offset:3px}

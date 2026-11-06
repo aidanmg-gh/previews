@@ -46,7 +46,7 @@
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="https://losangelesgeneralcontractor.com/blog/">Blog</a></li>
       <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="https://losangelesgeneralcontractor.com/frequently-asked-questions/">FAQ</a></li>
+      <li><a href="services.html#faq">FAQ</a></li>
       </ul>
     </nav>
     <div class="acts">
@@ -61,7 +61,7 @@
           <a href="portfolio.html">Portfolio</a>
           <a href="https://losangelesgeneralcontractor.com/blog/">Blog</a>
           <a href="index.html#contact">Contact</a>
-          <a href="https://losangelesgeneralcontractor.com/frequently-asked-questions/">FAQ</a>
+          <a href="services.html#faq">FAQ</a>
           <a class="q" href="index.html#contact">Get A Quote</a>
         </nav>
       </details>
@@ -147,6 +147,8 @@
 </nav>
 
 <script>
+  const body = document.body, onScroll = () => body.classList.toggle('scrolled', scrollY > 40);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
   document.querySelectorAll('.menu-list a').forEach(a => a.addEventListener('click', () => a.closest('details').open = false));
   const f = document.getElementById('quote');
   if (f) f.addEventListener('submit', e => { e.preventDefault(); f.classList.add('done'); });

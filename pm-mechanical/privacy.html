@@ -31,6 +31,7 @@
   <div class="wrap">
     <a class="lic" href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx">CSLB Lic. #604936 (C-20<span class="long"> Warm-Air Heating, Ventilating &amp; Air-Conditioning</span>)</a>
     <span class="since88">Heating &amp; air conditioning specialists since '88</span>
+    <a class="tel" href="tel:+13105306642">310.530.6642</a>
   </div>
 </div>
 
@@ -69,8 +70,24 @@
   </div>
 </header>
 
+<div class="mini">
+  <div class="wrap">
+    <a class="mini-logo" href="index.html"><img src="img/logo.webp" alt="P&amp;M Mechanical, home" width="800" height="83"></a>
+    <nav class="mini-nav" aria-label="Main, compact">
+          <a href="index.html">Home</a>
+          <a href="index.html#financing">Financing</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="about.html">About</a>
+          <a href="faq.html">FAQ</a>
+          <a href="testimonials.html">Testimonials</a>
+    </nav>
+    <a class="btn btn-sun mini-call" href="tel:+13105306642"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span>310.530.6642</span></a>
+  </div>
+</div>
+
 <main id="main">
 <section class="ptitle">
+  <svg class="air" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><path class="a1" pathLength="1" d="M760 40 C 900 -10, 1160 40, 1180 150"/><path class="a2" pathLength="1" d="M1170 230 C 1100 300, 900 310, 800 270"/></svg>
   <div class="wrap">
     <p class="crumbs"><a href="index.html">Home</a> / Privacy policy</p>
     <h1>Privacy policy</h1>
@@ -145,6 +162,8 @@
 
 <script>
   document.querySelectorAll('.menu-list a').forEach(a => a.addEventListener('click', () => a.closest('details').open = false));
+  const h = () => document.documentElement.classList.toggle('scrolled', scrollY > 360);
+  addEventListener('scroll', h, { passive: true }); h();
   const f = document.getElementById('quote');
   if (f) f.addEventListener('submit', e => { e.preventDefault(); f.classList.add('done'); });
 </script>

@@ -10,6 +10,7 @@
 <meta name="theme-color" content="#141414">
 <link rel="icon" href="img/icon.png">
 <link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/eb-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="img/hero-m.webp" media="(max-width: 600px)">
 <link rel="preload" as="image" href="img/hero.webp" media="(min-width: 601px)">
 <link rel="stylesheet" href="css/site.css">
@@ -34,6 +35,7 @@
     <a class="lic" href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1018757">CSLB Lic. #1018757 (C-10 Electrical)</a>
     <span class="hrs">Mon to Fri 8AM to 5PM · Sat 8AM to 12PM</span>
     <a class="mail" href="mailto:voltechelectric@aol.com">voltechelectric@aol.com</a>
+    <a class="tb-call" href="tel:+18184824563">Call 818-482-4563</a>
   </div>
 </div>
 
@@ -64,43 +66,50 @@
 
 <main id="main">
 <section class="hero">
-  <picture>
-    <source media="(max-width: 600px)" srcset="img/hero-m.webp" width="780" height="319">
-    <img class="banner" src="img/hero.webp" alt="Voltech Electric, with five stars, over the city lights" width="1600" height="288" fetchpriority="high">
-  </picture>
+  <div class="bframe">
+    <picture>
+      <source media="(max-width: 600px)" srcset="img/hero-m.webp" width="780" height="319">
+      <img class="banner" src="img/hero.webp" alt="Voltech Electric, with five stars, over the city lights" width="1600" height="288" fetchpriority="high">
+    </picture>
+  </div>
   <div class="wrap">
     <h1><b>Five star</b> electric service</h1>
     <p class="sub">Skilled electricians for homes and businesses, based in Sunland, CA. Panel upgrades, recessed lighting, EV charging stations and troubleshooting.</p>
-    <a class="rate" href="https://www.google.com/maps/search/?api=1&amp;query=Voltech%20Electric%20Inc%2010722%20Sharon%20Ave%20Sunland%20CA"><span class="stars" aria-hidden="true">★★★★★</span> 5.0 on Google · 41 reviews</a>
+    <a class="rate" href="https://www.google.com/maps/search/?api=1&amp;query=Voltech%20Electric%20Inc%2010722%20Sharon%20Ave%20Sunland%20CA"><span class="stars" aria-hidden="true"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span> <span>5.0 on Google · 41 reviews</span></a>
     <div class="cta">
       <a class="btn btn-or" href="tel:+18184824563"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span class="num">Call 818-482-4563</span></a>
       <a class="btn btn-ghost" href="#contact">Ask for a quote</a>
     </div>
-    <p class="lic"><a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1018757">CSLB Lic. #1018757 (C-10 Electrical)</a></p>
   </div>
 </section>
 
+<div class="trust" aria-label="Why Voltech">
+  <ul class="wrap">
+    <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Voltech%20Electric%20Inc%2010722%20Sharon%20Ave%20Sunland%20CA"><b>5.0 on Google</b><span>41 reviews</span></a></li>
+    <li><a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1018757"><b>CSLB Lic. #1018757</b><span>C-10 Electrical</span></a></li>
+    <li><b>Residential &amp; commercial</b><span>Panels, lighting, EV, troubleshooting</span></li>
+    <li><b>Open Monday to Saturday</b><span>Mon to Fri 8 to 5 · Sat 8 to 12</span></li>
+  </ul>
+</div>
+
 <section class="sec" id="specialize">
   <div class="wrap">
-    <h2>What we specialize in</h2>
+    <div class="sechead">
+      <h2>What we specialize in</h2>
+      <p>Three jobs we do most, shown with our own photos.</p>
+    </div>
     <div class="spec">
-      <a href="panel-upgrades.html">
+      <a class="big" href="panel-upgrades.html">
         <figure><img src="img/panel-labelled.webp" alt="A finished Siemens panel by Voltech, every breaker labelled" width="560" height="840" loading="lazy"></figure>
-        <h3>Electrical panel upgrades</h3>
-        <p>New electric service panels, starting from 100 amps and up, plus sub panels and breakers.</p>
-        <span class="more">Panel upgrades</span>
+        <div class="t"><h3>Electrical panel upgrades</h3><p>New electric service panels, starting from 100 amps and up, plus sub panels and breakers.</p><span class="more">Panel upgrades</span></div>
       </a>
       <a href="projects.html#lighting">
         <figure><img src="img/recessed-card.webp" alt="Recessed lights and a chandelier Voltech installed in a new-construction dining room" width="760" height="563" loading="lazy"></figure>
-        <h3>Recessed light installation</h3>
-        <p>Recessed lights, chandeliers and light fixtures for new construction and remodels.</p>
-        <span class="more">See the lighting work</span>
+        <div class="t"><h3>Recessed light installation</h3><p>Recessed lights, chandeliers and light fixtures for new construction and remodels.</p><span class="more">See the lighting work</span></div>
       </a>
       <a href="projects.html#ev">
-        <figure><img src="img/ev-wall.webp" alt="A wall-mounted EV charging station Voltech installed outside a home" width="560" height="824" loading="lazy"></figure>
-        <h3>EV charging station installation</h3>
-        <p>Chargers for garages, driveways and apartment parking.</p>
-        <span class="more">See the EV chargers</span>
+        <figure><img src="img/p-ev-stations.webp" alt="Two EV charging stations Voltech installed: one on a stucco wall, one by a driveway charging a blue car" width="900" height="666" loading="lazy"></figure>
+        <div class="t"><h3>EV charging station installation</h3><p>Chargers for garages, driveways and apartment parking.</p><span class="more">See the EV chargers</span></div>
       </a>
     </div>
   </div>
@@ -108,8 +117,10 @@
 
 <section class="sec alt" id="services">
   <div class="wrap">
-    <h2>Services that our skilled electricians provide</h2>
-    <p class="lede">Residential and commercial. If it isn't on the list, call and ask.</p>
+    <div class="sechead">
+      <h2>Services that our skilled electricians provide</h2>
+      <p>Residential and commercial. If it isn't on the list, call and ask.</p>
+    </div>
     <div class="svc">
       <div>
         <h3>Panels &amp; wiring</h3>
@@ -158,25 +169,34 @@
   </div>
 </section>
 
+<section class="pair" aria-label="Recent lighting work">
+  <figure><img src="img/band-chandelier.webp" alt="A new-construction dining room with recessed lights and a crystal chandelier over the table" width="1152" height="853" loading="lazy"><figcaption>Recessed light and chandelier installation, new construction</figcaption></figure>
+  <figure><img src="img/band-kitchen.webp" alt="A finished kitchen with dark cabinets, pendant lights and under-cabinet lighting" width="1152" height="853" loading="lazy"><figcaption>Kitchen remodel</figcaption></figure>
+</section>
+
 <section class="rev" id="reviews">
   <div class="wrap">
-    <h2>What our customers say</h2>
-    <a class="score" href="https://www.google.com/maps/search/?api=1&amp;query=Voltech%20Electric%20Inc%2010722%20Sharon%20Ave%20Sunland%20CA">
-      <span class="big">5.0</span>
-      <span><span class="stars" aria-hidden="true">★★★★★</span><small>41 reviews on Google · read them on our Maps listing</small></span>
-    </a>
+    <div class="revgrid">
+      <div class="score">
+        <h2>What our customers say</h2>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Voltech%20Electric%20Inc%2010722%20Sharon%20Ave%20Sunland%20CA"><span class="big">5.0</span><span class="stars" aria-hidden="true"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span><small>41 reviews on Google · read them on our Maps listing</small></a>
+      </div>
+      <blockquote class="feature"><p>“Voltech = awesome, very professional. Complex job, master panel was failing / overloaded and he replaced the whole thing with a work of wiring art. Power is stable and upgraded and it all looks great. Happy to recommend and will be 1st call for any electrical in future.”</p><cite>Customer review</cite></blockquote>
+    </div>
     <div class="quotes">
       <blockquote><p>“Voltech. Very experienced and professional guys. Nice and very fairly priced.”</p><cite>Customer review</cite></blockquote>
-      <blockquote><p>“Voltech = awesome, very professional. Complex job, master panel was failing / overloaded and he replaced the whole thing with a work of wiring art. Power is stable and upgraded and it all looks great. Happy to recommend and will be 1st call for any electrical in future.”</p><cite>Customer review</cite></blockquote>
       <blockquote><p>“I called Voltech to get a quote on a new sub panel and some other electrical issues. We permitted everything which they handled for us. Aram’s guys showed up as promised and the work was done in a high quality manner, his crew was very respectful and neat.”</p><cite>Customer review</cite></blockquote>
     </div>
     <p class="note">Rating and review count from our Google listing, November 2026. Already a customer? Leave us a review on Google.</p>
   </div>
 </section>
 
-<section class="sec center" id="work">
+<section class="sec" id="work">
   <div class="wrap">
-    <h2>Here's a small sampling of our electrical work</h2>
+    <div class="sechead row">
+      <h2>A small sampling of our electrical work</h2>
+      <a class="btn btn-dark" href="projects.html">See all our projects</a>
+    </div>
     <div class="strip">
       <img src="img/main-panel-a.webp" alt="A new meter and main panel with a disconnect on a stucco wall" width="560" height="770" loading="lazy">
       <img src="img/p-9-meters.webp" alt="A panel upgrade with nine meters for a nine-unit building" width="480" height="644" loading="lazy">
@@ -185,24 +205,39 @@
       <img src="img/panel-open-meter.webp" alt="An open meter and breaker panel, wired neatly" width="560" height="736" loading="lazy">
       <img src="img/p-recessed-kitchen.webp" alt="Recessed lights in a kitchen during a remodel" width="480" height="641" loading="lazy">
     </div>
-    <a class="btn btn-dark" href="projects.html">See all our projects</a>
   </div>
 </section>
 
 <section class="sec alt" id="hire">
-  <div class="wrap hire">
-    <div>
+  <div class="wrap">
+    <div class="sechead">
       <h2>How to find and hire an electrician</h2>
       <p>If you are having electrical problems in your home or office, it is important to hire a qualified electrician. Not all of them have the skills and experience your job needs. Here's a quick guide.</p>
     </div>
-    <ol>
-      <li><h3>Understand your electrical needs</h3><p>Know what kind of work you need: a new installation, a repair, an upgrade, or an inspection. It helps you find someone with the right skills.</p></li>
+    <ol class="hire">
+      <li><h3>Understand your electrical needs</h3><p>Know what kind of work you need: a new installation, a repair, an upgrade, or an inspection.</p></li>
       <li><h3>Check the license</h3><p>In California, look the electrician up on the Contractors State License Board website.</p><span class="ours">Ours: <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1018757">CSLB Lic. #1018757 (C-10 Electrical)</a></span></li>
       <li><h3>Check reviews and ratings</h3><p>Read what earlier customers say about reliability, punctuality and the quality of the work.</p><span class="ours">Ours: <a href="https://www.google.com/maps/search/?api=1&amp;query=Voltech%20Electric%20Inc%2010722%20Sharon%20Ave%20Sunland%20CA">5.0 on Google from 41 reviews</a></span></li>
-      <li><h3>Ask for references</h3><p>Ask for references from earlier clients. They give you a better sense of the work and the customer service.</p></li>
+      <li><h3>Ask for references</h3><p>References from earlier clients give you a better sense of the work and the customer service.</p></li>
       <li><h3>Check credentials and experience</h3><p>Ask about qualifications, certifications and years of experience, so you know they can handle your job.</p></li>
       <li><h3>Discuss the scope of work</h3><p>Go over the timeline, the budget and anything specific to your job. Be sure you are comparing apples to apples.</p></li>
     </ol>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap faq">
+    <div>
+      <h2>Questions</h2>
+      <p>Straight answers from our own pages. Anything else, call <a href="tel:+18184824563">818-482-4563</a>.</p>
+    </div>
+    <div class="qs">
+      <details><summary>What size panels do you install?</summary><p>New electric service panels, starting from 100 amps and up. We also install sub panels and replace burned or broken breakers. <a href="panel-upgrades.html">More on panel upgrades</a>.</p></details>
+      <details><summary>Do you work on homes or businesses?</summary><p>Both. We specialize in residential and commercial electrical work, and in troubleshooting.</p></details>
+      <details><summary>Can you install an EV charger?</summary><p>Yes. EV charging station installation is one of the three things we specialize in. See chargers we've put in garages and apartment parking on our <a href="projects.html#ev">Projects</a> page.</p></details>
+      <details><summary>What are your hours?</summary><p>Monday to Friday 8AM to 5PM, Saturday 8AM to 12PM. Closed Sunday.</p></details>
+      <details><summary>Are you licensed?</summary><p>Yes. CSLB Lic. #1018757 (C-10 Electrical). You can <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=1018757">check it on the CSLB website</a>.</p></details>
+    </div>
   </div>
 </section>
 
@@ -253,6 +288,14 @@
   </div>
 </section>
 </main>
+
+<section class="closer" aria-label="Call Voltech Electric">
+  <div class="wrap">
+    <p class="k"><span class="stars" aria-hidden="true"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span> Five star electric service</p>
+    <h2>Call today: <a href="tel:+18184824563">818-482-4563</a></h2>
+    <div class="cta"><a class="btn btn-dark" href="tel:+18184824563"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call 818-482-4563</a><a class="btn btn-line" href="index.html#contact">Ask for a quote</a></div>
+  </div>
+</section>
 
 <footer class="foot">
   <div class="wrap">

@@ -12,7 +12,6 @@
 <link rel="preload" href="fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="img/founders.webp">
-<link rel="preload" as="image" href="img/water.webp">
 <link rel="stylesheet" href="css/site.css">
 <script type="application/ld+json">
 {
@@ -44,7 +43,7 @@
     <a class="logo" href="index.html"><img src="img/logo.webp" alt="Cornett Plumbing &amp; Heating, Family Owned &amp; Operated since 1972. Home page" width="270" height="154"></a>
     <div class="top">
       <a class="phone" href="tel:+13103206171">(310) 320-6171</a>
-      <a class="yelp" href="https://www.yelp.com/writeareview/biz/Ue56p5i8anXmOBr_L6Vy7Q"><img src="img/yelp.webp" alt="Review us on Yelp" width="240" height="120" loading="lazy"></a>
+      <a class="yelp" href="https://www.yelp.com/writeareview/biz/Ue56p5i8anXmOBr_L6Vy7Q"><img src="img/yelp.webp" alt="Review us on Yelp" width="240" height="120"></a>
       <a class="btn btn-book" href="index.html#contact">Book online</a>
     </div>
     <nav class="nav" aria-label="Main">
@@ -91,88 +90,111 @@
   </div>
 </header>
 
+<div class="mini">
+  <div class="wrap">
+    <a class="ml" href="index.html"><img src="img/logo.webp" alt="Cornett Plumbing &amp; Heating, home page" width="270" height="154"></a>
+    <nav aria-label="Main (compact)">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#reviews">Testimonials</a>
+      <a href="index.html#gallery">Photo Gallery</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="mp" href="tel:+13103206171">(310) 320-6171</a>
+    <a class="btn btn-book" href="index.html#contact">Book online</a>
+  </div>
+</div>
+
 <main id="main">
 <section class="hero">
+  <div class="water" aria-hidden="true"></div>
   <div class="wrap">
     <div>
       <h1>Cornett Plumbing &amp; Heating <span>in Torrance since 1972</span></h1>
-      <p class="lead">Plumbing, heating and air conditioning for homes across the South Bay. Started by two brothers in 1972, still family owned and operated, now in its third generation.</p>
+      <p class="lede">Plumbing, heating and air conditioning for homes across the South Bay. Started by two brothers in 1972, still family owned and operated, now in its third generation.</p>
       <div class="cta">
         <a class="btn btn-red" href="tel:+13103206171"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call (310) 320-6171</a>
         <a class="btn btn-book" href="#contact">Book online</a>
       </div>
       <a class="stars-link" href="https://www.google.com/maps/search/?api=1&amp;query=Cornett%20Plumbing%20%26%20Heating%20Inc%2C%201715%20Cabrillo%20Ave%2C%20Torrance%2C%20CA%2090501"><span class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.4 on Google &middot; 58 reviews</a>
-      <p class="em">24-hour emergency service: <a href="tel:+13104892605">(310) 489-2605</a></p>
     </div>
     <figure class="photo">
-      <img src="img/founders.webp" alt="Black-and-white photo from Cornett Plumbing's early days: two men with shovels standing on a freshly dug trench" width="752" height="712" fetchpriority="high">
+      <div class="frame"><img src="img/founders.webp" alt="Black-and-white photo from Cornett Plumbing's early days: two men with shovels standing on a freshly dug trench" width="752" height="712" fetchpriority="high"></div>
       <figcaption>Where it started: Cornett Plumbing in the early days.</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="cards" aria-label="Why Cornett">
+<div class="trust" aria-label="At a glance">
+  <div class="wrap">
+    <a class="t" style="--i:0" href="https://www.google.com/maps/search/?api=1&amp;query=Cornett%20Plumbing%20%26%20Heating%20Inc%2C%201715%20Cabrillo%20Ave%2C%20Torrance%2C%20CA%2090501"><b>4.4 on Google</b><small>58 reviews. Read them on our Maps listing.</small></a>
+    <div class="t" style="--i:1"><b>Since 1972</b><small>Family owned &amp; operated, third generation.</small></div>
+    <a class="t" style="--i:2" href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=366365"><b>Lic. #366365</b><small>CSLB: C-36 Plumbing, C-20 Heating &amp; A/C.</small></a>
+    <a class="t" style="--i:3" href="tel:+13104892605"><b>24-hour</b><small>Emergency service: (310) 489-2605</small></a>
+  </div>
+</div>
+
+<section class="cards sec" aria-label="Why Cornett">
   <div class="wrap grid">
     <div class="card">
-      <img src="img/card-tech.webp" alt="A Cornett service technician at an open trench, holding a pipe fitting" width="270" height="257" loading="lazy">
+      <div class="img"><img src="img/card-tech.webp" alt="A Cornett service technician at an open trench, holding a pipe fitting" width="270" height="257" loading="lazy"></div>
       <h2>Certified &amp; Experienced</h2>
       <div class="body">
         <h3>Our Service Technicians</h3>
         <p>are experienced, certified and highly trained so they can diagnose your problem quickly. Our vehicles are equipped with the latest in plumbing and heating tools and equipment so our plumbers can complete the repair or installation job typically during the first trip. We conduct background checks and drug testing to ensure the safety of our customers.</p>
-        <a class="btn btn-steel" href="#about">Read more</a>
+        <a class="arrow" href="#about">Read more</a>
       </div>
     </div>
     <div class="card">
-      <img src="img/card-estimate.webp" alt="Two Cornett technicians going over paperwork" width="270" height="257" loading="lazy">
+      <div class="img"><img src="img/card-estimate.webp" alt="Two Cornett technicians going over paperwork" width="270" height="257" loading="lazy"></div>
       <h2>Reasonable Rates</h2>
       <div class="body">
         <h3>Estimates Given. Rates start at your door.</h3>
         <p>You should NOT have to go into debt just because you were up to your ankles in water. Major plumbing repairs can sometimes mean you need the option of paying over time, so we offer financing options to suit your budget. Senior Discounts Available.</p>
-        <a class="btn btn-steel" href="#services">Read more</a>
+        <a class="arrow" href="#faq">Read more</a>
       </div>
     </div>
     <div class="card">
-      <img src="img/card-office.webp" alt="A Cornett customer rep in a red Cornett jacket at the office desk" width="270" height="257" loading="lazy">
+      <div class="img"><img src="img/card-office.webp" alt="A Cornett customer rep in a red Cornett jacket at the office desk" width="270" height="257" loading="lazy"></div>
       <h2>Friendly Service</h2>
       <div class="body">
         <h3>Our friendly, courteous and knowledgeable customer reps</h3>
         <p>will answer your questions and arrange a service call that suits your busy schedule. If it's an emergency, we'll give your call priority. Once we've scheduled your service call, we guarantee our technicians will arrive on time. If they're unavoidably delayed, you'll be notified as soon as possible.</p>
-        <a class="btn btn-steel" href="tel:+13103206171">Call us</a>
+        <a class="arrow" href="tel:+13103206171">Call us</a>
       </div>
     </div>
     <div class="card">
-      <img src="img/card-booties.webp" alt="A work boot wearing a blue protective shoe cover on carpet" width="270" height="257" loading="lazy">
+      <div class="img"><img src="img/card-booties.webp" alt="A work boot wearing a blue protective shoe cover on carpet" width="270" height="257" loading="lazy"></div>
       <h2>Protecting Your Home</h2>
       <div class="body">
         <h3>We know it's our job to clean up messes, not make them.</h3>
         <p>Our plumbers treat your home like it was their own. They wear protective shoe covers on request and use drop cloths to keep work areas clean, remove any debris from your project and leave your home as clean as when they arrived.</p>
-        <a class="btn btn-steel" href="#reviews">Read more</a>
+        <a class="arrow" href="#reviews">Read more</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="reviews" id="reviews">
+<section class="reviews sec" id="reviews">
   <div class="wrap">
     <div class="top">
       <h2>Testimonials</h2>
       <a class="score" href="https://www.google.com/maps/search/?api=1&amp;query=Cornett%20Plumbing%20%26%20Heating%20Inc%2C%201715%20Cabrillo%20Ave%2C%20Torrance%2C%20CA%2090501">
         <span class="big">4.4</span>
-        <span class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-        <small><b>58 reviews on Google</b> &middot; read them on our Maps listing</small>
+        <span><span class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span><small><b>58 reviews on Google</b> &middot; read them on our Maps listing</small></span>
       </a>
     </div>
     <div class="quotes">
-      <blockquote>
-        <p>&ldquo;They completed our total re-pipe in a short time with almost no mess nor damage at all. The necessary drywall and stucco cuts were extremely minimal. &hellip; We are pleased with the price and with the results of Cornett's work.&rdquo;</p>
+      <blockquote class="lead-q">
+        <p>&ldquo;We confidently recommend Cornett Plumbing for even the largest and the most complicated job. They completed our total re-pipe in a short time with almost no mess nor damage at all. &hellip; The repairs are invisible and were done with no sanding and no dust at all.&rdquo;</p>
         <footer>Customer review</footer>
       </blockquote>
-      <blockquote>
+      <blockquote class="side">
         <p>&ldquo;Wayne Cornett (it's a family run business) came out, was refreshingly honest, did not try to upsell us and gave us an incredibly fair price. &hellip; I highly recommend them to anyone in South Bay.&rdquo;</p>
         <footer>Customer review</footer>
       </blockquote>
-      <blockquote>
-        <p>&ldquo;I found Cornett on Yelp, and they gave me an appointment for the same day. Dale came and fixed our entire heating problem in 1 hour and our entire bill was less than a nice dinner out. I highly recommend this family-owned and -run business.&rdquo;</p>
+      <blockquote class="side">
+        <p>&ldquo;I found Cornett on Yelp, and they gave me an appointment for the same day. Dale came and fixed our entire heating problem in 1 hour and our entire bill was less than a nice dinner out.&rdquo;</p>
         <footer>Customer review</footer>
       </blockquote>
     </div>
@@ -183,25 +205,32 @@
   </div>
 </section>
 
-<section class="then" id="gallery">
+<section class="gallery sec" id="gallery">
   <div class="wrap">
     <h2>Photo Gallery</h2>
-    <p class="intro">From the early days to the crew today. Every photo on this site is Cornett's own.</p>
-    <div class="strip">
-      <figure><img src="img/crew-70s.webp" alt="Color photo of the Cornett crew in the 1970s in matching work shirts" width="800" height="600" loading="lazy"><figcaption>Crew members from the 70s</figcaption></figure>
-      <figure><img src="img/van-70s.webp" alt="A young Cornett plumber in front of an early Cornett Plumbing van" width="800" height="600" loading="lazy"><figcaption>An early Cornett van</figcaption></figure>
-      <figure><img src="img/team.webp" alt="The Cornett Plumbing &amp; Heating team in black jackets in front of the shop" width="1170" height="570" loading="lazy"><figcaption>The Cornett crew today</figcaption></figure>
-      <figure><img src="img/tech-van.webp" alt="A Cornett plumber with a pipe on his shoulder beside a Cornett Plumbing &amp; Heating van" width="900" height="421" loading="lazy"><figcaption>A Cornett tech and van</figcaption></figure>
+    <p class="intro lede">From the early days to the crew today. Every photo on this site is Cornett's own.</p>
+    <div class="feat">
+      <figure class="big"><div class="shot"><img src="img/crew-70s-l.webp" alt="Color photo of the Cornett crew in the 1970s in matching work shirts" width="1200" height="900" loading="lazy"></div><figcaption>Crew members from the 70s</figcaption></figure>
+      <div class="side">
+        <figure><div class="shot"><img src="img/van-70s.webp" alt="A young Cornett plumber in front of an early Cornett Plumbing van" width="800" height="600" loading="lazy"></div><figcaption>An early Cornett van</figcaption></figure>
+        <figure><div class="shot"><img src="img/team.webp" alt="The Cornett Plumbing &amp; Heating team in black jackets in front of the shop" width="1170" height="570" loading="lazy"></div><figcaption>The Cornett crew today</figcaption></figure>
+      </div>
+    </div>
+    <div class="row3">
+      <figure><div class="shot"><img src="img/g-alex.webp" alt="A Cornett plumber working on equipment mounted on a wall" width="640" height="480" loading="lazy"></div><figcaption>On the job</figcaption></figure>
+      <figure><div class="shot"><img src="img/g-truck.webp" alt="A Cornett plumber by a Cornett Plumbing &amp; Heating truck" width="640" height="480" loading="lazy"></div><figcaption>A Cornett truck</figcaption></figure>
+      <figure><div class="shot"><img src="img/g-dave.webp" alt="A Cornett plumber in a blue work shirt in the Cornett office" width="640" height="480" loading="lazy"></div><figcaption>At the Cornett office</figcaption></figure>
     </div>
   </div>
 </section>
 
-<section class="about" id="about">
+<section class="about sec" id="about">
   <div class="wrap">
+    <figure class="ph"><div class="shot"><img src="img/team-2018.webp" alt="The Cornett team posing in front of their red-and-white service vans" width="1170" height="718" loading="lazy"></div><figcaption>The Cornett team and fleet.</figcaption></figure>
     <div>
       <h2>About Cornett Plumbing</h2>
       <p>Cornett Plumbing &amp; Heating Inc. was founded in 1972 by two brothers in the South Bay Area. We are a third-generation business that is still family owned and operated today, and we treat our customers like family.</p>
-      <p>Cornett Plumbing in Torrance is a premier residential plumbing and heating company. If it's plumbing or heating, we have the experience to complete the job. Our entire staff has years of experience in the industry, backed with certifications and extensive training in plumbing, heating and other services, such as tankless water heaters. We conduct background checks and drug screening on our staff to guarantee the safety of our customers.</p>
+      <p>Cornett Plumbing in Torrance is a premier residential plumbing and heating company. Our entire staff has years of experience in the industry, backed with certifications and extensive training in plumbing, heating and other services, such as tankless water heaters.</p>
       <dl class="facts">
         <dt>Founded</dt><dd>1972, by two brothers in the South Bay</dd>
         <dt>Family</dt><dd>Third generation, still family owned and operated</dd>
@@ -210,17 +239,16 @@
         <dt>Phone</dt><dd><a href="tel:+13103206171">(310) 320-6171</a> or <a href="tel:+13103736767">(310) 373-6767</a></dd>
       </dl>
     </div>
-    <div class="pics">
-      <figure><img src="img/team-2018.webp" alt="The Cornett team posing in front of their red-and-white service vans" width="1170" height="718" loading="lazy"><figcaption>The Cornett team and fleet.</figcaption></figure>
-    </div>
   </div>
 </section>
 
-<section class="services" id="services">
+<section class="services sec" id="services">
   <div class="wrap">
     <h2>Services</h2>
+    <p class="lede">Complete residential plumbing, heating and air conditioning, plus a wide variety of services to keep your home comfortable and well-maintained.</p>
     <div class="svc">
-      <div>
+      <article>
+        <div class="shot"><img src="img/s-plumbing.webp" alt="A Cornett plumber fitting new pipe through a small opening in a wall" width="720" height="540" loading="lazy"></div>
         <h3>Plumbing</h3>
         <ul>
           <li>Copper piping and re-piping</li>
@@ -230,9 +258,10 @@
           <li>Electronic leak detection, pinhole leaks</li>
           <li>Inspection, new installation, repair &amp; replacement</li>
         </ul>
-        <a class="btn btn-steel go" href="plumbing-services.html">Plumbing Services</a>
-      </div>
-      <div>
+        <a class="arrow" href="plumbing-services.html">Plumbing Services</a>
+      </article>
+      <article>
+        <div class="shot"><img src="img/s-hvac.webp" alt="A Cornett technician with a headlamp and torch in the crawl space under a house" width="720" height="540" loading="lazy"></div>
         <h3>HVAC</h3>
         <ul>
           <li>Air conditioner installation and repair</li>
@@ -241,9 +270,10 @@
           <li>Ventilation</li>
           <li>Inspections</li>
         </ul>
-        <a class="btn btn-steel go" href="hvac-services.html">HVAC Services</a>
-      </div>
-      <div id="more">
+        <a class="arrow" href="hvac-services.html">HVAC Services</a>
+      </article>
+      <article id="more">
+        <div class="shot"><img src="img/s-more.webp" alt="A Cornett mini excavator digging beside a Cornett van" width="720" height="540" loading="lazy"></div>
         <h3>More Services</h3>
         <ul>
           <li>Code violation repairs</li>
@@ -260,13 +290,48 @@
           <li>Video inspections</li>
           <li>Weather sealing and stripping</li>
         </ul>
-        <a class="btn btn-steel go" href="#contact">Ask about a job</a>
-      </div>
+        <a class="arrow" href="#contact">Ask about a job</a>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="faq sec" id="faq">
+  <div class="wrap">
+    <div class="aside">
+      <h2>Questions</h2>
+      <p>Anything else, call <a href="tel:+13103206171">(310) 320-6171</a>. We'll answer your questions and set up a time that suits your schedule.</p>
+    </div>
+    <div>
+      <details open>
+        <summary>Do you handle emergencies?</summary>
+        <p>Yes. 24-hour emergency service is available at <a href="tel:+13104892605">(310) 489-2605</a>. If it's an emergency, we'll give your call priority and do everything we can to expedite your service call.</p>
+      </details>
+      <details>
+        <summary>What are your hours?</summary>
+        <p>Monday to Friday, 7 am to 5 pm. Call <a href="tel:+13103206171">(310) 320-6171</a> for an appointment or estimate.</p>
+      </details>
+      <details>
+        <summary>Do you give estimates? Can I pay over time?</summary>
+        <p>Estimates given, and rates start at your door. Major repairs can mean you need the option of paying over time, so we offer financing options to suit your budget (<a href="https://api.gethearth.com/partners/cornett-plumbing-heating-inc">monthly payment options through Hearth</a>). Senior discounts available.</p>
+      </details>
+      <details>
+        <summary>Which heating and air conditioning brands do you service?</summary>
+        <p>Amana, American Standard, Bryant, Carrier, Coleman, Day &amp; Night, Gaffers &amp; Sattler, Gibson, Goodman, Heil, Honeywell, Lennox, Rheem, Tempstar, Trane and York. See <a href="hvac-services.html">HVAC Services</a>.</p>
+      </details>
+      <details>
+        <summary>Will you keep my house clean?</summary>
+        <p>Our plumbers wear protective shoe covers on request and use drop cloths to keep work areas clean. They remove any debris from your project and leave your home as clean as when they arrived.</p>
+      </details>
+      <details>
+        <summary>Who will come to my house?</summary>
+        <p>Experienced, certified and highly trained service technicians. We conduct background checks and drug testing to ensure the safety of our customers.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="contact sec" id="contact">
   <div class="wrap">
     <div>
       <h2>Contact</h2>
@@ -303,6 +368,20 @@
     </form>
   </div>
 </section>
+
+<section class="cta-band" aria-labelledby="cta-h">
+  <div class="wrap">
+    <div>
+      <h2 id="cta-h">Call for an Appointment or Estimate</h2>
+      <p>Monday &ndash; Friday, 7 am &ndash; 5 pm. 24-hour emergency service: <a href="tel:+13104892605">(310) 489-2605</a></p>
+    </div>
+    <div class="acts">
+      <a class="btn btn-white" href="tel:+13103206171"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call (310) 320-6171</a>
+      <a class="btn btn-outline" href="index.html#contact">Book online</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="foot">
@@ -346,6 +425,8 @@
 </nav>
 
 <script>
+  const root = document.documentElement, onScroll = () => root.classList.toggle('scrolled', scrollY > 260);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
   document.querySelectorAll('.menu-list a').forEach(a => a.addEventListener('click', () => a.closest('details').open = false));
   document.querySelectorAll('form.quote').forEach(f => f.addEventListener('submit', e => { e.preventDefault(); f.classList.add('done'); }));
 </script>
