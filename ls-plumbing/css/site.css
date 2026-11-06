@@ -187,6 +187,34 @@ form.done .sent { display: block; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
+/* ---------- motion ----------
+   Same idea as Alex & Rescue: the top of the page plays in on load, sections rise as they scroll in,
+   cards and buttons lift on hover. CSS only. Off for anyone who has asked their device for less motion. */
+@keyframes se-rise{from{opacity:0;translate:0 18px}to{opacity:1;translate:none}}
+@keyframes se-pop{0%{opacity:0;scale:.9}60%{opacity:1;scale:1.03}100%{opacity:1;scale:none}}
+@keyframes se-push{from{scale:1.1}to{scale:none}}
+@keyframes se-wipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0)}}
+@keyframes se-spin{from{opacity:0;rotate:-120deg;scale:.6}to{opacity:1;rotate:none;scale:none}}
+@keyframes se-slide{from{translate:-100% 0}to{translate:none}}
+@keyframes se-fill{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1{animation:se-rise .7s .1s cubic-bezier(.2,.7,.2,1) both}
+  .hero .sub{animation:se-rise .6s .3s cubic-bezier(.2,.7,.2,1) both}
+  .hero .btn{animation:se-pop .6s .5s cubic-bezier(.2,.7,.2,1) both}
+  .hero .num{animation:se-rise .6s .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero .proof{animation:se-rise .6s .85s cubic-bezier(.2,.7,.2,1) both}
+  .hero .proof .stars{animation:se-fill 1s 1s cubic-bezier(.2,.7,.2,1) both}
+  .hero .band{animation:se-slide .8s .3s cubic-bezier(.2,.7,.2,1) both}
+  .hero .stars,.banner .stars{display:inline-block}
+  .btn{transition:transform .2s,box-shadow .2s,background-color .2s,color .2s,border-color .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px -10px rgba(0,0,0,.45)}
+  .tile{transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+  .tile:hover{transform:translateY(-5px);box-shadow:0 18px 36px -22px rgba(0,0,0,.45)}
+  @supports (animation-timeline:view()){
+    .sec .title,.grid .tile,.reviews .score,.reviews blockquote,.about,.clean,.contact{animation:se-rise linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+  }
+}
+
 /* ---------- preview watermark ----------
    This copy is a sales preview, not their site. The tiled mark sits over everything (clicks pass
    through it) and the tag says whose work it is. Comes off when they pay and it goes live. */
